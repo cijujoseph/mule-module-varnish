@@ -1,0 +1,6 @@
+<!-- BEGIN_INCLUDE(varnish:config) -->
+<varnish:config/>
+<!-- END_INCLUDE(cors:config) -->
+<!-- BEGIN_INCLUDE(varnish:ban-url) -->
+<varnish:ban-url url="http://www.google.com" host="127.0.0.1" port="6082"/>
+<!-- END_INCLUDE(varnish:ban-url) -->

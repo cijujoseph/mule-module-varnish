@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<mule xmlns="http://www.mulesoft.org/schema/mule/core"
+      xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+      xmlns:varnish="http://www.mulesoft.org/schema/mule/varnish"
+      xmlns:http="http://www.mulesoft.org/schema/mule/http"
+      xmlns:test="http://www.mulesoft.org/schema/mule/test"
+      xsi:schemaLocation="http://www.mulesoft.org/schema/mule/core http://www.mulesoft.org/schema/mule/core/3.3/mule.xsd
+        http://www.mulesoft.org/schema/mule/http http://www.mulesoft.org/schema/mule/http/3.3/mule-http.xsd
+        http://www.mulesoft.org/schema/mule/test http://www.mulesoft.org/schema/mule/test/3.3/mule-test.xsd
+        http://www.mulesoft.org/schema/mule/varnish http://www.mulesoft.org/schema/mule/varnish/current/mule-varnish.xsd">
+
+    <flow name="banUrl">
+        <varnish:ban-url url="/organizations/starbucks" host="127.0.0.1" port="6082" secret="010c6c3b-28be-409a-b28b-2691543dc90b"/>
+        <varnish:ban-url url="/organizations/starbucks" host="127.0.0.1" port="6082" secret="010c6c3b-28be-409a-b28b-2691543dc90b"/>
+        <varnish:ban-url url="/organizations/starbucks" host="127.0.0.1" port="6082" secret="010c6c3b-28be-409a-b28b-2691543dc90b"/>
+        <varnish:ban-url url="/organizations/starbucks" host="127.0.0.1" port="6082" secret="010c6c3b-28be-409a-b28b-2691543dc90b"/>
+    </flow>
+</mule>
