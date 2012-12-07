@@ -14,10 +14,6 @@
         <version>3.3.2</version>
     </parent>
 
-    <properties>
-        <rest.assured.version>1.6.2</rest.assured.version>
-    </properties>
-
     <repositories>
         <repository>
             <id>mulesoft-snapshots</id>
@@ -60,18 +56,6 @@
             <groupId>org.mule.modules</groupId>
             <artifactId>mule-module-json</artifactId>
             <version>${mule.version}</version>
-            <!--
-            <exclusions>
-                <exclusion>
-                    <groupId>org.codehaus.jackson</groupId>
-                    <artifactId>jackson-core-asl</artifactId>
-                </exclusion>
-                <exclusion>
-                    <groupId>org.codehaus.jackson</groupId>
-                    <artifactId>jackson-mapper-asl</artifactId>
-                </exclusion>
-            </exclusions>
-            -->
         </dependency>
         <dependency>
             <groupId>io.netty</groupId>
@@ -85,30 +69,6 @@
             <groupId>org.mule.tests</groupId>
             <artifactId>mule-tests-functional</artifactId>
             <version>${mule.version}</version>
-            <scope>test</scope>
-            <exclusions>
-                <exclusion>
-                    <groupId>junit</groupId>
-                    <artifactId>junit</artifactId>
-                </exclusion>
-            </exclusions>
-        </dependency>
-        <dependency>
-            <groupId>junit</groupId>
-            <artifactId>junit-dep</artifactId>
-            <version>${junit.version}</version>
-            <scope>test</scope>
-            <exclusions>
-                <exclusion>
-                    <groupId>org.hamcrest</groupId>
-                    <artifactId>hamcrest-core</artifactId>
-                </exclusion>
-            </exclusions>
-        </dependency>
-        <dependency>
-            <groupId>com.jayway.restassured</groupId>
-            <artifactId>rest-assured</artifactId>
-            <version>${rest.assured.version}</version>
             <scope>test</scope>
         </dependency>
 
@@ -193,21 +153,12 @@
     </build>
 
     <scm>
-        <connection>scm:git:git://github.com:mulesoft/mule-module-rest.git
+        <connection>scm:git:git://github.com:mulesoft/mule-module-varnish.git
         </connection>
         <developerConnection>
-            scm:git:git@github.com:mulesoft/mule-module-rest.git
+            scm:git:git@github.com:mulesoft/mule-module-varnish.git
         </developerConnection>
-        <url>http://github.com/mulesoft/mule-module-rest</url>
+        <url>http://github.com/mulesoft/mule-module-varnish</url>
     </scm>
-
-    <distributionManagement>
-        <snapshotRepository>
-            <id>mule-ee-snapshots</id>
-            <name>Mule Snapshot Repository</name>
-            <url>http://dev.ee.mulesource.com/repository/content/repositories/snapshots/</url>
-            <uniqueVersion>false</uniqueVersion>
-        </snapshotRepository>
-    </distributionManagement>
 
 </project>
