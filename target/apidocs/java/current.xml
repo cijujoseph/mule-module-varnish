@@ -1,0 +1,3725 @@
+<api>
+<package name="org.mule.modules.varnish"
+>
+<class name="VarnishChannelException"
+ extends="java.lang.Exception"
+ abstract="false"
+ static="false"
+ final="false"
+ deprecated="not deprecated"
+ visibility="public"
+>
+<constructor name="VarnishChannelException"
+ type="org.mule.modules.varnish.VarnishChannelException"
+ static="false"
+ final="false"
+ deprecated="not deprecated"
+ visibility="public"
+>
+</constructor>
+<constructor name="VarnishChannelException"
+ type="org.mule.modules.varnish.VarnishChannelException"
+ static="false"
+ final="false"
+ deprecated="not deprecated"
+ visibility="public"
+>
+<parameter name="message" type="java.lang.String">
+</parameter>
+</constructor>
+<constructor name="VarnishChannelException"
+ type="org.mule.modules.varnish.VarnishChannelException"
+ static="false"
+ final="false"
+ deprecated="not deprecated"
+ visibility="public"
+>
+<parameter name="message" type="java.lang.String">
+</parameter>
+<parameter name="cause" type="java.lang.Throwable">
+</parameter>
+</constructor>
+<constructor name="VarnishChannelException"
+ type="org.mule.modules.varnish.VarnishChannelException"
+ static="false"
+ final="false"
+ deprecated="not deprecated"
+ visibility="public"
+>
+<parameter name="cause" type="java.lang.Throwable">
+</parameter>
+</constructor>
+</class>
+<class name="VarnishDecoder"
+ extends="org.jboss.netty.handler.codec.oneone.OneToOneDecoder"
+ abstract="false"
+ static="false"
+ final="false"
+ deprecated="not deprecated"
+ visibility="public"
+>
+<constructor name="VarnishDecoder"
+ type="org.mule.modules.varnish.VarnishDecoder"
+ static="false"
+ final="false"
+ deprecated="not deprecated"
+ visibility="public"
+>
+</constructor>
+<method name="decode"
+ return="java.lang.Object"
+ abstract="false"
+ native="false"
+ synchronized="false"
+ static="false"
+ final="false"
+ deprecated="not deprecated"
+ visibility="protected"
+>
+<parameter name="ctx" type="org.jboss.netty.channel.ChannelHandlerContext">
+</parameter>
+<parameter name="channel" type="org.jboss.netty.channel.Channel">
+</parameter>
+<parameter name="msg" type="java.lang.Object">
+</parameter>
+<exception name="Exception" type="java.lang.Exception">
+</exception>
+</method>
+</class>
+<class name="VarnishException"
+ extends="java.lang.Exception"
+ abstract="false"
+ static="false"
+ final="false"
+ deprecated="not deprecated"
+ visibility="public"
+>
+<constructor name="VarnishException"
+ type="org.mule.modules.varnish.VarnishException"
+ static="false"
+ final="false"
+ deprecated="not deprecated"
+ visibility="public"
+>
+</constructor>
+<constructor name="VarnishException"
+ type="org.mule.modules.varnish.VarnishException"
+ static="false"
+ final="false"
+ deprecated="not deprecated"
+ visibility="public"
+>
+<parameter name="message" type="java.lang.String">
+</parameter>
+</constructor>
+<constructor name="VarnishException"
+ type="org.mule.modules.varnish.VarnishException"
+ static="false"
+ final="false"
+ deprecated="not deprecated"
+ visibility="public"
+>
+<parameter name="message" type="java.lang.String">
+</parameter>
+<parameter name="cause" type="java.lang.Throwable">
+</parameter>
+</constructor>
+<constructor name="VarnishException"
+ type="org.mule.modules.varnish.VarnishException"
+ static="false"
+ final="false"
+ deprecated="not deprecated"
+ visibility="public"
+>
+<parameter name="cause" type="java.lang.Throwable">
+</parameter>
+</constructor>
+</class>
+<class name="VarnishFrameDecoder"
+ extends="org.jboss.netty.handler.codec.frame.FrameDecoder"
+ abstract="false"
+ static="false"
+ final="false"
+ deprecated="not deprecated"
+ visibility="public"
+>
+<constructor name="VarnishFrameDecoder"
+ type="org.mule.modules.varnish.VarnishFrameDecoder"
+ static="false"
+ final="false"
+ deprecated="not deprecated"
+ visibility="public"
+>
+</constructor>
+<method name="decode"
+ return="java.lang.Object"
+ abstract="false"
+ native="false"
+ synchronized="false"
+ static="false"
+ final="false"
+ deprecated="not deprecated"
+ visibility="protected"
+>
+<parameter name="ctx" type="org.jboss.netty.channel.ChannelHandlerContext">
+</parameter>
+<parameter name="channel" type="org.jboss.netty.channel.Channel">
+</parameter>
+<parameter name="buffer" type="org.jboss.netty.buffer.ChannelBuffer">
+</parameter>
+<exception name="Exception" type="java.lang.Exception">
+</exception>
+</method>
+<method name="extractFrame"
+ return="org.jboss.netty.buffer.ChannelBuffer"
+ abstract="false"
+ native="false"
+ synchronized="false"
+ static="false"
+ final="false"
+ deprecated="not deprecated"
+ visibility="protected"
+>
+<parameter name="buffer" type="org.jboss.netty.buffer.ChannelBuffer">
+</parameter>
+<parameter name="index" type="int">
+</parameter>
+<parameter name="length" type="int">
+</parameter>
+</method>
+<field name="LOGGER"
+ type="org.apache.log4j.Logger"
+ transient="false"
+ volatile="false"
+ static="true"
+ final="true"
+ deprecated="not deprecated"
+ visibility="private"
+>
+</field>
+</class>
+<class name="VarnishModule"
+ extends="org.jboss.netty.channel.SimpleChannelHandler"
+ abstract="false"
+ static="false"
+ final="false"
+ deprecated="not deprecated"
+ visibility="public"
+>
+<constructor name="VarnishModule"
+ type="org.mule.modules.varnish.VarnishModule"
+ static="false"
+ final="false"
+ deprecated="not deprecated"
+ visibility="public"
+>
+</constructor>
+<method name="banUrl"
+ return="void"
+ abstract="false"
+ native="false"
+ synchronized="false"
+ static="false"
+ final="false"
+ deprecated="not deprecated"
+ visibility="public"
+>
+<parameter name="url" type="java.lang.String">
+</parameter>
+<exception name="TimeoutException" type="java.util.concurrent.TimeoutException">
+</exception>
+<exception name="VarnishChannelException" type="org.mule.modules.varnish.VarnishChannelException">
+</exception>
+<exception name="VarnishException" type="org.mule.modules.varnish.VarnishException">
+</exception>
+</method>
+<method name="connect"
+ return="void"
+ abstract="false"
+ native="false"
+ synchronized="false"
+ static="false"
+ final="false"
+ deprecated="not deprecated"
+ visibility="public"
+>
+<parameter name="host" type="java.lang.String">
+</parameter>
+<parameter name="port" type="int">
+</parameter>
+<parameter name="secret" type="java.lang.String">
+</parameter>
+<exception name="ConnectionException" type="org.mule.api.ConnectionException">
+</exception>
+</method>
+<method name="connectionId"
+ return="java.lang.String"
+ abstract="false"
+ native="false"
+ synchronized="false"
+ static="false"
+ final="false"
+ deprecated="not deprecated"
+ visibility="public"
+>
+</method>
+<method name="disconnect"
+ return="void"
+ abstract="false"
+ native="false"
+ synchronized="false"
+ static="false"
+ final="false"
+ deprecated="not deprecated"
+ visibility="public"
+>
+</method>
+<method name="validateConnection"
+ return="boolean"
+ abstract="false"
+ native="false"
+ synchronized="false"
+ static="false"
+ final="false"
+ deprecated="not deprecated"
+ visibility="public"
+>
+</method>
+<field name="LOGGER"
+ type="org.apache.log4j.Logger"
+ transient="false"
+ volatile="false"
+ static="true"
+ final="true"
+ deprecated="not deprecated"
+ visibility="private"
+>
+</field>
+<field name="callbacks"
+ type="java.util.Queue"
+ transient="false"
+ volatile="false"
+ static="false"
+ final="true"
+ deprecated="not deprecated"
+ visibility="private"
+>
+</field>
+<field name="channel"
+ type="org.jboss.netty.channel.Channel"
+ transient="false"
+ volatile="false"
+ static="false"
+ final="false"
+ deprecated="not deprecated"
+ visibility="private"
+>
+</field>
+<field name="lock"
+ type="java.util.concurrent.locks.Lock"
+ transient="false"
+ volatile="false"
+ static="false"
+ final="true"
+ deprecated="not deprecated"
+ visibility="private"
+>
+</field>
+</class>
+<class name="VarnishPipelineFactory"
+ extends="java.lang.Object"
+ abstract="false"
+ static="false"
+ final="false"
+ deprecated="not deprecated"
+ visibility="public"
+>
+<implements name="org.jboss.netty.channel.ChannelPipelineFactory">
+</implements>
+<constructor name="VarnishPipelineFactory"
+ type="org.mule.modules.varnish.VarnishPipelineFactory"
+ static="false"
+ final="false"
+ deprecated="not deprecated"
+ visibility="public"
+>
+<parameter name="handler" type="org.jboss.netty.channel.ChannelHandler">
+</parameter>
+</constructor>
+<method name="getPipeline"
+ return="org.jboss.netty.channel.ChannelPipeline"
+ abstract="false"
+ native="false"
+ synchronized="false"
+ static="false"
+ final="false"
+ deprecated="not deprecated"
+ visibility="public"
+>
+<exception name="Exception" type="java.lang.Exception">
+</exception>
+</method>
+<field name="handler"
+ type="org.jboss.netty.channel.ChannelHandler"
+ transient="false"
+ volatile="false"
+ static="false"
+ final="true"
+ deprecated="not deprecated"
+ visibility="private"
+>
+</field>
+</class>
+<class name="VarnishResponse"
+ extends="java.lang.Object"
+ abstract="false"
+ static="false"
+ final="false"
+ deprecated="not deprecated"
+ visibility="public"
+>
+<constructor name="VarnishResponse"
+ type="org.mule.modules.varnish.VarnishResponse"
+ static="false"
+ final="false"
+ deprecated="not deprecated"
+ visibility="public"
+>
+<parameter name="statusCode" type="org.mule.modules.varnish.VarnishStatusCode">
+</parameter>
+<parameter name="message" type="java.lang.String">
+</parameter>
+</constructor>
+<constructor name="VarnishResponse"
+ type="org.mule.modules.varnish.VarnishResponse"
+ static="false"
+ final="false"
+ deprecated="not deprecated"
+ visibility="public"
+>
+<parameter name="statusCode" type="org.mule.modules.varnish.VarnishStatusCode">
+</parameter>
+</constructor>
+<method name="getMessage"
+ return="java.lang.String"
+ abstract="false"
+ native="false"
+ synchronized="false"
+ static="false"
+ final="false"
+ deprecated="not deprecated"
+ visibility="public"
+>
+</method>
+<method name="getStatusCode"
+ return="org.mule.modules.varnish.VarnishStatusCode"
+ abstract="false"
+ native="false"
+ synchronized="false"
+ static="false"
+ final="false"
+ deprecated="not deprecated"
+ visibility="public"
+>
+</method>
+<field name="message"
+ type="java.lang.String"
+ transient="false"
+ volatile="false"
+ static="false"
+ final="true"
+ deprecated="not deprecated"
+ visibility="private"
+>
+</field>
+<field name="statusCode"
+ type="org.mule.modules.varnish.VarnishStatusCode"
+ transient="false"
+ volatile="false"
+ static="false"
+ final="true"
+ deprecated="not deprecated"
+ visibility="private"
+>
+</field>
+</class>
+<class name="VarnishStatusCode"
+ extends="java.lang.Enum"
+ abstract="false"
+ static="false"
+ final="true"
+ deprecated="not deprecated"
+ visibility="public"
+>
+<method name="fromStatusCode"
+ return="org.mule.modules.varnish.VarnishStatusCode"
+ abstract="false"
+ native="false"
+ synchronized="false"
+ static="true"
+ final="false"
+ deprecated="not deprecated"
+ visibility="public"
+>
+<parameter name="statusCode" type="int">
+</parameter>
+</method>
+<method name="getStatusCode"
+ return="int"
+ abstract="false"
+ native="false"
+ synchronized="false"
+ static="false"
+ final="false"
+ deprecated="not deprecated"
+ visibility="public"
+>
+</method>
+<method name="valueOf"
+ return="org.mule.modules.varnish.VarnishStatusCode"
+ abstract="false"
+ native="false"
+ synchronized="false"
+ static="true"
+ final="false"
+ deprecated="not deprecated"
+ visibility="public"
+>
+<parameter name="name" type="java.lang.String">
+</parameter>
+</method>
+<method name="values"
+ return="org.mule.modules.varnish.VarnishStatusCode[]"
+ abstract="false"
+ native="false"
+ synchronized="false"
+ static="true"
+ final="true"
+ deprecated="not deprecated"
+ visibility="public"
+>
+</method>
+<field name="statusCode"
+ type="int"
+ transient="false"
+ volatile="false"
+ static="false"
+ final="true"
+ deprecated="not deprecated"
+ visibility="private"
+>
+</field>
+</class>
+</package>
+<package name="org.mule.modules.varnish.adapters"
+>
+<class name="VarnishModuleCapabilitiesAdapter"
+ extends="org.mule.modules.varnish.VarnishModule"
+ abstract="false"
+ static="false"
+ final="false"
+ deprecated="not deprecated"
+ visibility="public"
+>
+<constructor name="VarnishModuleCapabilitiesAdapter"
+ type="org.mule.modules.varnish.adapters.VarnishModuleCapabilitiesAdapter"
+ static="false"
+ final="false"
+ deprecated="not deprecated"
+ visibility="public"
+>
+</constructor>
+<method name="isCapableOf"
+ return="boolean"
+ abstract="false"
+ native="false"
+ synchronized="false"
+ static="false"
+ final="false"
+ deprecated="not deprecated"
+ visibility="public"
+>
+<parameter name="capability" type="org.mule.api.Capability">
+</parameter>
+</method>
+</class>
+<class name="VarnishModuleConnectionIdentifierAdapter"
+ extends="org.mule.modules.varnish.adapters.VarnishModuleProcessAdapter"
+ abstract="false"
+ static="false"
+ final="false"
+ deprecated="not deprecated"
+ visibility="public"
+>
+<implements name="org.mule.api.Connection">
+</implements>
+<constructor name="VarnishModuleConnectionIdentifierAdapter"
+ type="org.mule.modules.varnish.adapters.VarnishModuleConnectionIdentifierAdapter"
+ static="false"
+ final="false"
+ deprecated="not deprecated"
+ visibility="public"
+>
+</constructor>
+<method name="getConnectionIdentifier"
+ return="java.lang.String"
+ abstract="false"
+ native="false"
+ synchronized="false"
+ static="false"
+ final="false"
+ deprecated="not deprecated"
+ visibility="public"
+>
+</method>
+</class>
+<class name="VarnishModuleLifecycleAdapter"
+ extends="org.mule.modules.varnish.adapters.VarnishModuleMetadataAdapater"
+ abstract="false"
+ static="false"
+ final="false"
+ deprecated="not deprecated"
+ visibility="public"
+>
+<implements name="org.mule.api.lifecycle.Initialisable">
+</implements>
+<constructor name="VarnishModuleLifecycleAdapter"
+ type="org.mule.modules.varnish.adapters.VarnishModuleLifecycleAdapter"
+ static="false"
+ final="false"
+ deprecated="not deprecated"
+ visibility="public"
+>
+</constructor>
+<method name="dispose"
+ return="void"
+ abstract="false"
+ native="false"
+ synchronized="false"
+ static="false"
+ final="false"
+ deprecated="not deprecated"
+ visibility="public"
+>
+</method>
+<method name="initialise"
+ return="void"
+ abstract="false"
+ native="false"
+ synchronized="false"
+ static="false"
+ final="false"
+ deprecated="not deprecated"
+ visibility="public"
+>
+<exception name="InitialisationException" type="org.mule.api.lifecycle.InitialisationException">
+</exception>
+</method>
+<method name="start"
+ return="void"
+ abstract="false"
+ native="false"
+ synchronized="false"
+ static="false"
+ final="false"
+ deprecated="not deprecated"
+ visibility="public"
+>
+<exception name="MuleException" type="org.mule.api.MuleException">
+</exception>
+</method>
+<method name="stop"
+ return="void"
+ abstract="false"
+ native="false"
+ synchronized="false"
+ static="false"
+ final="false"
+ deprecated="not deprecated"
+ visibility="public"
+>
+<exception name="MuleException" type="org.mule.api.MuleException">
+</exception>
+</method>
+</class>
+<class name="VarnishModuleMetadataAdapater"
+ extends="org.mule.modules.varnish.adapters.VarnishModuleCapabilitiesAdapter"
+ abstract="false"
+ static="false"
+ final="false"
+ deprecated="not deprecated"
+ visibility="public"
+>
+<constructor name="VarnishModuleMetadataAdapater"
+ type="org.mule.modules.varnish.adapters.VarnishModuleMetadataAdapater"
+ static="false"
+ final="false"
+ deprecated="not deprecated"
+ visibility="public"
+>
+</constructor>
+<method name="getDevkitBuild"
+ return="java.lang.String"
+ abstract="false"
+ native="false"
+ synchronized="false"
+ static="false"
+ final="false"
+ deprecated="not deprecated"
+ visibility="public"
+>
+</method>
+<method name="getDevkitVersion"
+ return="java.lang.String"
+ abstract="false"
+ native="false"
+ synchronized="false"
+ static="false"
+ final="false"
+ deprecated="not deprecated"
+ visibility="public"
+>
+</method>
+<method name="getModuleName"
+ return="java.lang.String"
+ abstract="false"
+ native="false"
+ synchronized="false"
+ static="false"
+ final="false"
+ deprecated="not deprecated"
+ visibility="public"
+>
+</method>
+<method name="getModuleVersion"
+ return="java.lang.String"
+ abstract="false"
+ native="false"
+ synchronized="false"
+ static="false"
+ final="false"
+ deprecated="not deprecated"
+ visibility="public"
+>
+</method>
+<field name="DEVKIT_BUILD"
+ type="java.lang.String"
+ transient="false"
+ volatile="false"
+ value="&quot;UNNAMED.1372.db235f3&quot;"
+ static="true"
+ final="true"
+ deprecated="not deprecated"
+ visibility="private"
+>
+</field>
+<field name="DEVKIT_VERSION"
+ type="java.lang.String"
+ transient="false"
+ volatile="false"
+ value="&quot;3.3.2&quot;"
+ static="true"
+ final="true"
+ deprecated="not deprecated"
+ visibility="private"
+>
+</field>
+<field name="MODULE_NAME"
+ type="java.lang.String"
+ transient="false"
+ volatile="false"
+ value="&quot;varnish&quot;"
+ static="true"
+ final="true"
+ deprecated="not deprecated"
+ visibility="private"
+>
+</field>
+<field name="MODULE_VERSION"
+ type="java.lang.String"
+ transient="false"
+ volatile="false"
+ value="&quot;1.0-SNAPSHOT&quot;"
+ static="true"
+ final="true"
+ deprecated="not deprecated"
+ visibility="private"
+>
+</field>
+</class>
+<class name="VarnishModuleProcessAdapter"
+ extends="org.mule.modules.varnish.adapters.VarnishModuleLifecycleAdapter"
+ abstract="false"
+ static="false"
+ final="false"
+ deprecated="not deprecated"
+ visibility="public"
+>
+<constructor name="VarnishModuleProcessAdapter"
+ type="org.mule.modules.varnish.adapters.VarnishModuleProcessAdapter"
+ static="false"
+ final="false"
+ deprecated="not deprecated"
+ visibility="public"
+>
+</constructor>
+<method name="getProcessTemplate"
+ return="org.mule.api.process.ProcessTemplate&lt;P, org.mule.modules.varnish.adapters.VarnishModuleCapabilitiesAdapter&gt;"
+ abstract="false"
+ native="false"
+ synchronized="false"
+ static="false"
+ final="false"
+ deprecated="not deprecated"
+ visibility="public"
+>
+</method>
+</class>
+</package>
+<package name="org.mule.modules.varnish.agents"
+>
+<class name="DefaultSplashScreenAgent"
+ extends="java.lang.Object"
+ abstract="false"
+ static="false"
+ final="false"
+ deprecated="not deprecated"
+ visibility="public"
+>
+<implements name="org.mule.api.agent.Agent">
+</implements>
+<constructor name="DefaultSplashScreenAgent"
+ type="org.mule.modules.varnish.agents.DefaultSplashScreenAgent"
+ static="false"
+ final="false"
+ deprecated="not deprecated"
+ visibility="public"
+>
+</constructor>
+<method name="dispose"
+ return="void"
+ abstract="false"
+ native="false"
+ synchronized="false"
+ static="false"
+ final="false"
+ deprecated="not deprecated"
+ visibility="public"
+>
+</method>
+<method name="getDescription"
+ return="java.lang.String"
+ abstract="false"
+ native="false"
+ synchronized="false"
+ static="false"
+ final="false"
+ deprecated="not deprecated"
+ visibility="public"
+>
+</method>
+<method name="getExtensionsCount"
+ return="int"
+ abstract="false"
+ native="false"
+ synchronized="false"
+ static="false"
+ final="false"
+ deprecated="not deprecated"
+ visibility="public"
+>
+</method>
+<method name="getMuleContext"
+ return="org.mule.api.MuleContext"
+ abstract="false"
+ native="false"
+ synchronized="false"
+ static="false"
+ final="false"
+ deprecated="not deprecated"
+ visibility="public"
+>
+</method>
+<method name="getName"
+ return="java.lang.String"
+ abstract="false"
+ native="false"
+ synchronized="false"
+ static="false"
+ final="false"
+ deprecated="not deprecated"
+ visibility="public"
+>
+</method>
+<method name="initialise"
+ return="void"
+ abstract="false"
+ native="false"
+ synchronized="false"
+ static="false"
+ final="false"
+ deprecated="not deprecated"
+ visibility="public"
+>
+</method>
+<method name="setMuleContext"
+ return="void"
+ abstract="false"
+ native="false"
+ synchronized="false"
+ static="false"
+ final="false"
+ deprecated="not deprecated"
+ visibility="public"
+>
+<parameter name="value" type="org.mule.api.MuleContext">
+</parameter>
+</method>
+<method name="setName"
+ return="void"
+ abstract="false"
+ native="false"
+ synchronized="false"
+ static="false"
+ final="false"
+ deprecated="not deprecated"
+ visibility="public"
+>
+<parameter name="name" type="java.lang.String">
+</parameter>
+</method>
+<method name="splash"
+ return="void"
+ abstract="false"
+ native="false"
+ synchronized="false"
+ static="false"
+ final="false"
+ deprecated="not deprecated"
+ visibility="public"
+>
+</method>
+<method name="start"
+ return="void"
+ abstract="false"
+ native="false"
+ synchronized="false"
+ static="false"
+ final="false"
+ deprecated="not deprecated"
+ visibility="public"
+>
+</method>
+<method name="stop"
+ return="void"
+ abstract="false"
+ native="false"
+ synchronized="false"
+ static="false"
+ final="false"
+ deprecated="not deprecated"
+ visibility="public"
+>
+</method>
+<field name="extensionsCount"
+ type="int"
+ transient="false"
+ volatile="false"
+ static="false"
+ final="false"
+ deprecated="not deprecated"
+ visibility="private"
+>
+</field>
+<field name="logger"
+ type="org.slf4j.Logger"
+ transient="false"
+ volatile="false"
+ static="true"
+ final="false"
+ deprecated="not deprecated"
+ visibility="private"
+>
+</field>
+<field name="muleContext"
+ type="org.mule.api.MuleContext"
+ transient="false"
+ volatile="false"
+ static="false"
+ final="false"
+ deprecated="not deprecated"
+ visibility="private"
+>
+</field>
+</class>
+</package>
+<package name="org.mule.modules.varnish.config"
+>
+<class name="AbstractDefinitionParser"
+ extends="java.lang.Object"
+ abstract="true"
+ static="false"
+ final="false"
+ deprecated="not deprecated"
+ visibility="public"
+>
+<implements name="org.springframework.beans.factory.xml.BeanDefinitionParser">
+</implements>
+<constructor name="AbstractDefinitionParser"
+ type="org.mule.modules.varnish.config.AbstractDefinitionParser"
+ static="false"
+ final="false"
+ deprecated="not deprecated"
+ visibility="public"
+>
+</constructor>
+<method name="attachProcessorDefinition"
+ return="void"
+ abstract="false"
+ native="false"
+ synchronized="false"
+ static="false"
+ final="false"
+ deprecated="not deprecated"
+ visibility="protected"
+>
+<parameter name="parserContext" type="org.springframework.beans.factory.xml.ParserContext">
+</parameter>
+<parameter name="definition" type="org.springframework.beans.factory.config.BeanDefinition">
+</parameter>
+</method>
+<method name="attachSourceDefinition"
+ return="void"
+ abstract="false"
+ native="false"
+ synchronized="false"
+ static="false"
+ final="false"
+ deprecated="not deprecated"
+ visibility="protected"
+>
+<parameter name="parserContext" type="org.springframework.beans.factory.xml.ParserContext">
+</parameter>
+<parameter name="definition" type="org.springframework.beans.factory.config.BeanDefinition">
+</parameter>
+</method>
+<method name="generateChildBeanName"
+ return="java.lang.String"
+ abstract="false"
+ native="false"
+ synchronized="false"
+ static="false"
+ final="false"
+ deprecated="not deprecated"
+ visibility="protected"
+>
+<parameter name="element" type="org.w3c.dom.Element">
+</parameter>
+</method>
+<method name="getAttributeValue"
+ return="java.lang.String"
+ abstract="false"
+ native="false"
+ synchronized="false"
+ static="false"
+ final="false"
+ deprecated="not deprecated"
+ visibility="protected"
+>
+<parameter name="element" type="org.w3c.dom.Element">
+</parameter>
+<parameter name="attributeName" type="java.lang.String">
+</parameter>
+</method>
+<method name="hasAttribute"
+ return="boolean"
+ abstract="false"
+ native="false"
+ synchronized="false"
+ static="false"
+ final="false"
+ deprecated="not deprecated"
+ visibility="protected"
+>
+<parameter name="element" type="org.w3c.dom.Element">
+</parameter>
+<parameter name="attributeName" type="java.lang.String">
+</parameter>
+</method>
+<method name="isMuleExpression"
+ return="boolean"
+ abstract="false"
+ native="false"
+ synchronized="false"
+ static="false"
+ final="false"
+ deprecated="not deprecated"
+ visibility="protected"
+>
+<parameter name="value" type="java.lang.String">
+</parameter>
+</method>
+<method name="parseConfigName"
+ return="void"
+ abstract="false"
+ native="false"
+ synchronized="false"
+ static="false"
+ final="false"
+ deprecated="not deprecated"
+ visibility="protected"
+>
+<parameter name="element" type="org.w3c.dom.Element">
+</parameter>
+</method>
+<method name="parseConfigRef"
+ return="void"
+ abstract="false"
+ native="false"
+ synchronized="false"
+ static="false"
+ final="false"
+ deprecated="not deprecated"
+ visibility="protected"
+>
+<parameter name="element" type="org.w3c.dom.Element">
+</parameter>
+<parameter name="builder" type="org.springframework.beans.factory.support.BeanDefinitionBuilder">
+</parameter>
+</method>
+<method name="parseList"
+ return="org.springframework.beans.factory.support.ManagedList"
+ abstract="false"
+ native="false"
+ synchronized="false"
+ static="false"
+ final="false"
+ deprecated="not deprecated"
+ visibility="protected"
+>
+<parameter name="element" type="org.w3c.dom.Element">
+</parameter>
+<parameter name="childElementName" type="java.lang.String">
+</parameter>
+<parameter name="parserDelegate" type="org.mule.modules.varnish.config.AbstractDefinitionParser.ParseDelegate">
+</parameter>
+</method>
+<method name="parseListAndSetProperty"
+ return="void"
+ abstract="false"
+ native="false"
+ synchronized="false"
+ static="false"
+ final="false"
+ deprecated="not deprecated"
+ visibility="protected"
+>
+<parameter name="element" type="org.w3c.dom.Element">
+</parameter>
+<parameter name="builder" type="org.springframework.beans.factory.support.BeanDefinitionBuilder">
+</parameter>
+<parameter name="fieldName" type="java.lang.String">
+</parameter>
+<parameter name="parentElementName" type="java.lang.String">
+</parameter>
+<parameter name="childElementName" type="java.lang.String">
+</parameter>
+<parameter name="parserDelegate" type="org.mule.modules.varnish.config.AbstractDefinitionParser.ParseDelegate">
+</parameter>
+</method>
+<method name="parseListWithDefaultAndSetProperty"
+ return="void"
+ abstract="false"
+ native="false"
+ synchronized="false"
+ static="false"
+ final="false"
+ deprecated="not deprecated"
+ visibility="protected"
+>
+<parameter name="element" type="org.w3c.dom.Element">
+</parameter>
+<parameter name="builder" type="org.springframework.beans.factory.support.BeanDefinitionBuilder">
+</parameter>
+<parameter name="fieldName" type="java.lang.String">
+</parameter>
+<parameter name="parentElementName" type="java.lang.String">
+</parameter>
+<parameter name="childElementName" type="java.lang.String">
+</parameter>
+<parameter name="defaultValue" type="java.lang.String">
+</parameter>
+<parameter name="parserDelegate" type="org.mule.modules.varnish.config.AbstractDefinitionParser.ParseDelegate">
+</parameter>
+</method>
+<method name="parseMap"
+ return="org.springframework.beans.factory.support.ManagedMap"
+ abstract="false"
+ native="false"
+ synchronized="false"
+ static="false"
+ final="false"
+ deprecated="not deprecated"
+ visibility="protected"
+>
+<parameter name="element" type="org.w3c.dom.Element">
+</parameter>
+<parameter name="childElementName" type="java.lang.String">
+</parameter>
+<parameter name="parserDelegate" type="org.mule.modules.varnish.config.AbstractDefinitionParser.ParseDelegate">
+</parameter>
+</method>
+<method name="parseMapAndSetProperty"
+ return="void"
+ abstract="false"
+ native="false"
+ synchronized="false"
+ static="false"
+ final="false"
+ deprecated="not deprecated"
+ visibility="protected"
+>
+<parameter name="element" type="org.w3c.dom.Element">
+</parameter>
+<parameter name="builder" type="org.springframework.beans.factory.support.BeanDefinitionBuilder">
+</parameter>
+<parameter name="fieldName" type="java.lang.String">
+</parameter>
+<parameter name="parentElementName" type="java.lang.String">
+</parameter>
+<parameter name="childElementName" type="java.lang.String">
+</parameter>
+<parameter name="parserDelegate" type="org.mule.modules.varnish.config.AbstractDefinitionParser.ParseDelegate">
+</parameter>
+</method>
+<method name="parseMapWithDefaultAndSetProperty"
+ return="void"
+ abstract="false"
+ native="false"
+ synchronized="false"
+ static="false"
+ final="false"
+ deprecated="not deprecated"
+ visibility="protected"
+>
+<parameter name="element" type="org.w3c.dom.Element">
+</parameter>
+<parameter name="builder" type="org.springframework.beans.factory.support.BeanDefinitionBuilder">
+</parameter>
+<parameter name="fieldName" type="java.lang.String">
+</parameter>
+<parameter name="parentElementName" type="java.lang.String">
+</parameter>
+<parameter name="childElementName" type="java.lang.String">
+</parameter>
+<parameter name="defaultValue" type="java.lang.String">
+</parameter>
+<parameter name="parserDelegate" type="org.mule.modules.varnish.config.AbstractDefinitionParser.ParseDelegate">
+</parameter>
+</method>
+<method name="parseNestedProcessor"
+ return="org.springframework.beans.factory.config.BeanDefinition"
+ abstract="false"
+ native="false"
+ synchronized="false"
+ static="false"
+ final="false"
+ deprecated="not deprecated"
+ visibility="protected"
+>
+<parameter name="element" type="org.w3c.dom.Element">
+</parameter>
+<parameter name="parserContext" type="org.springframework.beans.factory.xml.ParserContext">
+</parameter>
+<parameter name="factory" type="java.lang.Class">
+</parameter>
+</method>
+<method name="parseNestedProcessorAndSetProperty"
+ return="void"
+ abstract="false"
+ native="false"
+ synchronized="false"
+ static="false"
+ final="false"
+ deprecated="not deprecated"
+ visibility="protected"
+>
+<parameter name="element" type="org.w3c.dom.Element">
+</parameter>
+<parameter name="parserContext" type="org.springframework.beans.factory.xml.ParserContext">
+</parameter>
+<parameter name="factory" type="java.lang.Class">
+</parameter>
+<parameter name="builder" type="org.springframework.beans.factory.support.BeanDefinitionBuilder">
+</parameter>
+<parameter name="propertyName" type="java.lang.String">
+</parameter>
+</method>
+<method name="parseNestedProcessorAndSetProperty"
+ return="void"
+ abstract="false"
+ native="false"
+ synchronized="false"
+ static="false"
+ final="false"
+ deprecated="not deprecated"
+ visibility="protected"
+>
+<parameter name="element" type="org.w3c.dom.Element">
+</parameter>
+<parameter name="childElementName" type="java.lang.String">
+</parameter>
+<parameter name="parserContext" type="org.springframework.beans.factory.xml.ParserContext">
+</parameter>
+<parameter name="factory" type="java.lang.Class">
+</parameter>
+<parameter name="builder" type="org.springframework.beans.factory.support.BeanDefinitionBuilder">
+</parameter>
+<parameter name="propertyName" type="java.lang.String">
+</parameter>
+</method>
+<method name="parseNestedProcessorAsList"
+ return="java.util.List"
+ abstract="false"
+ native="false"
+ synchronized="false"
+ static="false"
+ final="false"
+ deprecated="not deprecated"
+ visibility="protected"
+>
+<parameter name="element" type="org.w3c.dom.Element">
+</parameter>
+<parameter name="parserContext" type="org.springframework.beans.factory.xml.ParserContext">
+</parameter>
+<parameter name="factory" type="java.lang.Class">
+</parameter>
+</method>
+<method name="parseNestedProcessorAsListAndSetProperty"
+ return="void"
+ abstract="false"
+ native="false"
+ synchronized="false"
+ static="false"
+ final="false"
+ deprecated="not deprecated"
+ visibility="protected"
+>
+<parameter name="element" type="org.w3c.dom.Element">
+</parameter>
+<parameter name="parserContext" type="org.springframework.beans.factory.xml.ParserContext">
+</parameter>
+<parameter name="factory" type="java.lang.Class">
+</parameter>
+<parameter name="builder" type="org.springframework.beans.factory.support.BeanDefinitionBuilder">
+</parameter>
+<parameter name="propertyName" type="java.lang.String">
+</parameter>
+</method>
+<method name="parseNestedProcessorAsListAndSetProperty"
+ return="void"
+ abstract="false"
+ native="false"
+ synchronized="false"
+ static="false"
+ final="false"
+ deprecated="not deprecated"
+ visibility="protected"
+>
+<parameter name="element" type="org.w3c.dom.Element">
+</parameter>
+<parameter name="childElementName" type="java.lang.String">
+</parameter>
+<parameter name="parserContext" type="org.springframework.beans.factory.xml.ParserContext">
+</parameter>
+<parameter name="factory" type="java.lang.Class">
+</parameter>
+<parameter name="builder" type="org.springframework.beans.factory.support.BeanDefinitionBuilder">
+</parameter>
+<parameter name="propertyName" type="java.lang.String">
+</parameter>
+</method>
+<method name="parseNoExprObjectRef"
+ return="boolean"
+ abstract="false"
+ native="false"
+ synchronized="false"
+ static="false"
+ final="false"
+ deprecated="not deprecated"
+ visibility="protected"
+>
+<parameter name="element" type="org.w3c.dom.Element">
+</parameter>
+<parameter name="builder" type="org.springframework.beans.factory.support.BeanDefinitionBuilder">
+</parameter>
+<parameter name="elementName" type="java.lang.String">
+</parameter>
+<parameter name="propertyName" type="java.lang.String">
+</parameter>
+</method>
+<method name="parseNoExprObjectRefWithDefault"
+ return="boolean"
+ abstract="false"
+ native="false"
+ synchronized="false"
+ static="false"
+ final="false"
+ deprecated="not deprecated"
+ visibility="protected"
+>
+<parameter name="element" type="org.w3c.dom.Element">
+</parameter>
+<parameter name="builder" type="org.springframework.beans.factory.support.BeanDefinitionBuilder">
+</parameter>
+<parameter name="elementName" type="java.lang.String">
+</parameter>
+<parameter name="propertyName" type="java.lang.String">
+</parameter>
+<parameter name="defaultValue" type="java.lang.String">
+</parameter>
+</method>
+<method name="parseObjectRef"
+ return="boolean"
+ abstract="false"
+ native="false"
+ synchronized="false"
+ static="false"
+ final="false"
+ deprecated="not deprecated"
+ visibility="protected"
+>
+<parameter name="element" type="org.w3c.dom.Element">
+</parameter>
+<parameter name="builder" type="org.springframework.beans.factory.support.BeanDefinitionBuilder">
+</parameter>
+<parameter name="elementName" type="java.lang.String">
+</parameter>
+<parameter name="propertyName" type="java.lang.String">
+</parameter>
+</method>
+<method name="parseObjectRefWithDefault"
+ return="boolean"
+ abstract="false"
+ native="false"
+ synchronized="false"
+ static="false"
+ final="false"
+ deprecated="not deprecated"
+ visibility="protected"
+>
+<parameter name="element" type="org.w3c.dom.Element">
+</parameter>
+<parameter name="builder" type="org.springframework.beans.factory.support.BeanDefinitionBuilder">
+</parameter>
+<parameter name="elementName" type="java.lang.String">
+</parameter>
+<parameter name="propertyName" type="java.lang.String">
+</parameter>
+<parameter name="defaultValue" type="java.lang.String">
+</parameter>
+</method>
+<method name="parseProperty"
+ return="void"
+ abstract="false"
+ native="false"
+ synchronized="false"
+ static="false"
+ final="false"
+ deprecated="not deprecated"
+ visibility="protected"
+>
+<parameter name="builder" type="org.springframework.beans.factory.support.BeanDefinitionBuilder">
+</parameter>
+<parameter name="element" type="org.w3c.dom.Element">
+</parameter>
+<parameter name="propertyName" type="java.lang.String">
+</parameter>
+</method>
+<method name="parseProperty"
+ return="void"
+ abstract="false"
+ native="false"
+ synchronized="false"
+ static="false"
+ final="false"
+ deprecated="not deprecated"
+ visibility="protected"
+>
+<parameter name="builder" type="org.springframework.beans.factory.support.BeanDefinitionBuilder">
+</parameter>
+<parameter name="element" type="org.w3c.dom.Element">
+</parameter>
+<parameter name="attributeName" type="java.lang.String">
+</parameter>
+<parameter name="propertyName" type="java.lang.String">
+</parameter>
+</method>
+<method name="parsePropertyRef"
+ return="void"
+ abstract="false"
+ native="false"
+ synchronized="false"
+ static="false"
+ final="false"
+ deprecated="not deprecated"
+ visibility="protected"
+>
+<parameter name="builder" type="org.springframework.beans.factory.support.BeanDefinitionBuilder">
+</parameter>
+<parameter name="element" type="org.w3c.dom.Element">
+</parameter>
+<parameter name="attributeName" type="java.lang.String">
+</parameter>
+<parameter name="propertyName" type="java.lang.String">
+</parameter>
+</method>
+<method name="parsePropertyRef"
+ return="void"
+ abstract="false"
+ native="false"
+ synchronized="false"
+ static="false"
+ final="false"
+ deprecated="not deprecated"
+ visibility="protected"
+>
+<parameter name="builder" type="org.springframework.beans.factory.support.BeanDefinitionBuilder">
+</parameter>
+<parameter name="element" type="org.w3c.dom.Element">
+</parameter>
+<parameter name="propertyName" type="java.lang.String">
+</parameter>
+</method>
+<method name="parseRetryPolicyTemplate"
+ return="void"
+ abstract="false"
+ native="false"
+ synchronized="false"
+ static="false"
+ final="false"
+ deprecated="not deprecated"
+ visibility="protected"
+>
+<parameter name="elementName" type="java.lang.String">
+</parameter>
+<parameter name="element" type="org.w3c.dom.Element">
+</parameter>
+<parameter name="parserContext" type="org.springframework.beans.factory.xml.ParserContext">
+</parameter>
+<parameter name="builder" type="org.springframework.beans.factory.support.BeanDefinitionBuilder">
+</parameter>
+<parameter name="definition" type="org.springframework.beans.factory.config.BeanDefinition">
+</parameter>
+</method>
+<method name="parseTextProperty"
+ return="void"
+ abstract="false"
+ native="false"
+ synchronized="false"
+ static="false"
+ final="false"
+ deprecated="not deprecated"
+ visibility="protected"
+>
+<parameter name="builder" type="org.springframework.beans.factory.support.BeanDefinitionBuilder">
+</parameter>
+<parameter name="element" type="org.w3c.dom.Element">
+</parameter>
+<parameter name="elementName" type="java.lang.String">
+</parameter>
+<parameter name="propertyName" type="java.lang.String">
+</parameter>
+</method>
+<method name="setDestroyMethodIfNeeded"
+ return="void"
+ abstract="false"
+ native="false"
+ synchronized="false"
+ static="false"
+ final="false"
+ deprecated="not deprecated"
+ visibility="protected"
+>
+<parameter name="builder" type="org.springframework.beans.factory.support.BeanDefinitionBuilder">
+</parameter>
+<parameter name="clazz" type="java.lang.Class">
+</parameter>
+</method>
+<method name="setInitMethodIfNeeded"
+ return="void"
+ abstract="false"
+ native="false"
+ synchronized="false"
+ static="false"
+ final="false"
+ deprecated="not deprecated"
+ visibility="protected"
+>
+<parameter name="builder" type="org.springframework.beans.factory.support.BeanDefinitionBuilder">
+</parameter>
+<parameter name="clazz" type="java.lang.Class">
+</parameter>
+</method>
+<method name="setNoRecurseOnDefinition"
+ return="void"
+ abstract="false"
+ native="false"
+ synchronized="false"
+ static="false"
+ final="false"
+ deprecated="not deprecated"
+ visibility="protected"
+>
+<parameter name="definition" type="org.springframework.beans.factory.config.BeanDefinition">
+</parameter>
+</method>
+<method name="setRef"
+ return="void"
+ abstract="false"
+ native="false"
+ synchronized="false"
+ static="false"
+ final="false"
+ deprecated="not deprecated"
+ visibility="protected"
+>
+<parameter name="builder" type="org.springframework.beans.factory.support.BeanDefinitionBuilder">
+</parameter>
+<parameter name="propertyName" type="java.lang.String">
+</parameter>
+<parameter name="ref" type="java.lang.String">
+</parameter>
+</method>
+<field name="patternInfo"
+ type="org.mule.util.TemplateParser.PatternInfo"
+ transient="false"
+ volatile="false"
+ static="false"
+ final="false"
+ deprecated="not deprecated"
+ visibility="private"
+>
+</field>
+</class>
+<interface name="AbstractDefinitionParser.ParseDelegate"
+ abstract="true"
+ static="true"
+ final="false"
+ deprecated="not deprecated"
+ visibility="public"
+>
+<method name="parse"
+ return="T"
+ abstract="true"
+ native="false"
+ synchronized="false"
+ static="false"
+ final="false"
+ deprecated="not deprecated"
+ visibility="public"
+>
+<parameter name="element" type="org.w3c.dom.Element">
+</parameter>
+</method>
+</interface>
+<class name="BanUrlDefinitionParser"
+ extends="org.mule.modules.varnish.config.AbstractDefinitionParser"
+ abstract="false"
+ static="false"
+ final="false"
+ deprecated="not deprecated"
+ visibility="public"
+>
+<constructor name="BanUrlDefinitionParser"
+ type="org.mule.modules.varnish.config.BanUrlDefinitionParser"
+ static="false"
+ final="false"
+ deprecated="not deprecated"
+ visibility="public"
+>
+</constructor>
+<method name="parse"
+ return="org.springframework.beans.factory.config.BeanDefinition"
+ abstract="false"
+ native="false"
+ synchronized="false"
+ static="false"
+ final="false"
+ deprecated="not deprecated"
+ visibility="public"
+>
+<parameter name="element" type="org.w3c.dom.Element">
+</parameter>
+<parameter name="parserContext" type="org.springframework.beans.factory.xml.ParserContext">
+</parameter>
+</method>
+</class>
+<class name="VarnishModuleConfigDefinitionParser"
+ extends="org.mule.modules.varnish.config.AbstractDefinitionParser"
+ abstract="false"
+ static="false"
+ final="false"
+ deprecated="not deprecated"
+ visibility="public"
+>
+<constructor name="VarnishModuleConfigDefinitionParser"
+ type="org.mule.modules.varnish.config.VarnishModuleConfigDefinitionParser"
+ static="false"
+ final="false"
+ deprecated="not deprecated"
+ visibility="public"
+>
+</constructor>
+<method name="parse"
+ return="org.springframework.beans.factory.config.BeanDefinition"
+ abstract="false"
+ native="false"
+ synchronized="false"
+ static="false"
+ final="false"
+ deprecated="not deprecated"
+ visibility="public"
+>
+<parameter name="element" type="org.w3c.dom.Element">
+</parameter>
+<parameter name="parserContext" type="org.springframework.beans.factory.xml.ParserContext">
+</parameter>
+</method>
+</class>
+<class name="VarnishNamespaceHandler"
+ extends="org.springframework.beans.factory.xml.NamespaceHandlerSupport"
+ abstract="false"
+ static="false"
+ final="false"
+ deprecated="not deprecated"
+ visibility="public"
+>
+<constructor name="VarnishNamespaceHandler"
+ type="org.mule.modules.varnish.config.VarnishNamespaceHandler"
+ static="false"
+ final="false"
+ deprecated="not deprecated"
+ visibility="public"
+>
+</constructor>
+<method name="init"
+ return="void"
+ abstract="false"
+ native="false"
+ synchronized="false"
+ static="false"
+ final="false"
+ deprecated="not deprecated"
+ visibility="public"
+>
+</method>
+</class>
+</package>
+<package name="org.mule.modules.varnish.connectivity"
+>
+<class name="ManagedConnectionProcessTemplate"
+ extends="java.lang.Object"
+ abstract="false"
+ static="false"
+ final="false"
+ deprecated="not deprecated"
+ visibility="public"
+>
+<implements name="org.mule.api.process.ProcessTemplate">
+</implements>
+<constructor name="ManagedConnectionProcessTemplate"
+ type="org.mule.modules.varnish.connectivity.ManagedConnectionProcessTemplate"
+ static="false"
+ final="false"
+ deprecated="not deprecated"
+ visibility="public"
+>
+<parameter name="connectionManager" type="org.mule.api.ConnectionManager&lt;org.mule.modules.varnish.connectivity.VarnishModuleConnectionKey, org.mule.modules.varnish.adapters.VarnishModuleConnectionIdentifierAdapter&gt;">
+</parameter>
+<parameter name="muleContext" type="org.mule.api.MuleContext">
+</parameter>
+</constructor>
+<method name="execute"
+ return="P"
+ abstract="false"
+ native="false"
+ synchronized="false"
+ static="false"
+ final="false"
+ deprecated="not deprecated"
+ visibility="public"
+>
+<parameter name="processCallback" type="org.mule.api.process.ProcessCallback&lt;P, org.mule.modules.varnish.adapters.VarnishModuleConnectionIdentifierAdapter&gt;">
+</parameter>
+<parameter name="messageProcessor" type="org.mule.api.processor.MessageProcessor">
+</parameter>
+<parameter name="event" type="org.mule.api.MuleEvent">
+</parameter>
+<exception name="Exception" type="java.lang.Exception">
+</exception>
+</method>
+<method name="execute"
+ return="P"
+ abstract="false"
+ native="false"
+ synchronized="false"
+ static="false"
+ final="false"
+ deprecated="not deprecated"
+ visibility="public"
+>
+<parameter name="processCallback" type="org.mule.api.process.ProcessCallback&lt;P, org.mule.modules.varnish.adapters.VarnishModuleConnectionIdentifierAdapter&gt;">
+</parameter>
+<parameter name="filter" type="org.mule.api.routing.filter.Filter">
+</parameter>
+<parameter name="message" type="org.mule.api.MuleMessage">
+</parameter>
+<exception name="Exception" type="java.lang.Exception">
+</exception>
+</method>
+<field name="processInterceptor"
+ type="org.mule.api.process.ProcessInterceptor"
+ transient="false"
+ volatile="false"
+ static="false"
+ final="true"
+ deprecated="not deprecated"
+ visibility="private"
+>
+</field>
+</class>
+<class name="VarnishModuleConnectionFactory"
+ extends="java.lang.Object"
+ abstract="false"
+ static="false"
+ final="false"
+ deprecated="not deprecated"
+ visibility="public"
+>
+<implements name="org.apache.commons.pool.KeyedPoolableObjectFactory">
+</implements>
+<constructor name="VarnishModuleConnectionFactory"
+ type="org.mule.modules.varnish.connectivity.VarnishModuleConnectionFactory"
+ static="false"
+ final="false"
+ deprecated="not deprecated"
+ visibility="public"
+>
+<parameter name="connectionManager" type="org.mule.modules.varnish.connectivity.VarnishModuleConnectionManager">
+</parameter>
+</constructor>
+<method name="activateObject"
+ return="void"
+ abstract="false"
+ native="false"
+ synchronized="false"
+ static="false"
+ final="false"
+ deprecated="not deprecated"
+ visibility="public"
+>
+<parameter name="key" type="java.lang.Object">
+</parameter>
+<parameter name="obj" type="java.lang.Object">
+</parameter>
+<exception name="Exception" type="java.lang.Exception">
+</exception>
+</method>
+<method name="destroyObject"
+ return="void"
+ abstract="false"
+ native="false"
+ synchronized="false"
+ static="false"
+ final="false"
+ deprecated="not deprecated"
+ visibility="public"
+>
+<parameter name="key" type="java.lang.Object">
+</parameter>
+<parameter name="obj" type="java.lang.Object">
+</parameter>
+<exception name="Exception" type="java.lang.Exception">
+</exception>
+</method>
+<method name="makeObject"
+ return="java.lang.Object"
+ abstract="false"
+ native="false"
+ synchronized="false"
+ static="false"
+ final="false"
+ deprecated="not deprecated"
+ visibility="public"
+>
+<parameter name="key" type="java.lang.Object">
+</parameter>
+<exception name="Exception" type="java.lang.Exception">
+</exception>
+</method>
+<method name="passivateObject"
+ return="void"
+ abstract="false"
+ native="false"
+ synchronized="false"
+ static="false"
+ final="false"
+ deprecated="not deprecated"
+ visibility="public"
+>
+<parameter name="key" type="java.lang.Object">
+</parameter>
+<parameter name="obj" type="java.lang.Object">
+</parameter>
+<exception name="Exception" type="java.lang.Exception">
+</exception>
+</method>
+<method name="validateObject"
+ return="boolean"
+ abstract="false"
+ native="false"
+ synchronized="false"
+ static="false"
+ final="false"
+ deprecated="not deprecated"
+ visibility="public"
+>
+<parameter name="key" type="java.lang.Object">
+</parameter>
+<parameter name="obj" type="java.lang.Object">
+</parameter>
+</method>
+<field name="connectionManager"
+ type="org.mule.modules.varnish.connectivity.VarnishModuleConnectionManager"
+ transient="false"
+ volatile="false"
+ static="false"
+ final="false"
+ deprecated="not deprecated"
+ visibility="private"
+>
+</field>
+<field name="logger"
+ type="org.slf4j.Logger"
+ transient="false"
+ volatile="false"
+ static="true"
+ final="false"
+ deprecated="not deprecated"
+ visibility="private"
+>
+</field>
+</class>
+<class name="VarnishModuleConnectionKey"
+ extends="java.lang.Object"
+ abstract="false"
+ static="false"
+ final="false"
+ deprecated="not deprecated"
+ visibility="public"
+>
+<constructor name="VarnishModuleConnectionKey"
+ type="org.mule.modules.varnish.connectivity.VarnishModuleConnectionKey"
+ static="false"
+ final="false"
+ deprecated="not deprecated"
+ visibility="public"
+>
+<parameter name="host" type="java.lang.String">
+</parameter>
+<parameter name="port" type="int">
+</parameter>
+<parameter name="secret" type="java.lang.String">
+</parameter>
+</constructor>
+<method name="getHost"
+ return="java.lang.String"
+ abstract="false"
+ native="false"
+ synchronized="false"
+ static="false"
+ final="false"
+ deprecated="not deprecated"
+ visibility="public"
+>
+</method>
+<method name="getPort"
+ return="int"
+ abstract="false"
+ native="false"
+ synchronized="false"
+ static="false"
+ final="false"
+ deprecated="not deprecated"
+ visibility="public"
+>
+</method>
+<method name="getSecret"
+ return="java.lang.String"
+ abstract="false"
+ native="false"
+ synchronized="false"
+ static="false"
+ final="false"
+ deprecated="not deprecated"
+ visibility="public"
+>
+</method>
+<method name="setHost"
+ return="void"
+ abstract="false"
+ native="false"
+ synchronized="false"
+ static="false"
+ final="false"
+ deprecated="not deprecated"
+ visibility="public"
+>
+<parameter name="value" type="java.lang.String">
+</parameter>
+</method>
+<method name="setPort"
+ return="void"
+ abstract="false"
+ native="false"
+ synchronized="false"
+ static="false"
+ final="false"
+ deprecated="not deprecated"
+ visibility="public"
+>
+<parameter name="value" type="int">
+</parameter>
+</method>
+<method name="setSecret"
+ return="void"
+ abstract="false"
+ native="false"
+ synchronized="false"
+ static="false"
+ final="false"
+ deprecated="not deprecated"
+ visibility="public"
+>
+<parameter name="value" type="java.lang.String">
+</parameter>
+</method>
+<field name="host"
+ type="java.lang.String"
+ transient="false"
+ volatile="false"
+ static="false"
+ final="false"
+ deprecated="not deprecated"
+ visibility="private"
+>
+</field>
+<field name="port"
+ type="int"
+ transient="false"
+ volatile="false"
+ static="false"
+ final="false"
+ deprecated="not deprecated"
+ visibility="private"
+>
+</field>
+<field name="secret"
+ type="java.lang.String"
+ transient="false"
+ volatile="false"
+ static="false"
+ final="false"
+ deprecated="not deprecated"
+ visibility="private"
+>
+</field>
+</class>
+<class name="VarnishModuleConnectionManager"
+ extends="java.lang.Object"
+ abstract="false"
+ static="false"
+ final="false"
+ deprecated="not deprecated"
+ visibility="public"
+>
+<implements name="org.mule.api.ConnectionManager">
+</implements>
+<implements name="org.mule.api.lifecycle.Initialisable">
+</implements>
+<constructor name="VarnishModuleConnectionManager"
+ type="org.mule.modules.varnish.connectivity.VarnishModuleConnectionManager"
+ static="false"
+ final="false"
+ deprecated="not deprecated"
+ visibility="public"
+>
+</constructor>
+<method name="acquireConnection"
+ return="org.mule.modules.varnish.adapters.VarnishModuleConnectionIdentifierAdapter"
+ abstract="false"
+ native="false"
+ synchronized="false"
+ static="false"
+ final="false"
+ deprecated="not deprecated"
+ visibility="public"
+>
+<parameter name="key" type="org.mule.modules.varnish.connectivity.VarnishModuleConnectionKey">
+</parameter>
+<exception name="Exception" type="java.lang.Exception">
+</exception>
+</method>
+<method name="destroyConnection"
+ return="void"
+ abstract="false"
+ native="false"
+ synchronized="false"
+ static="false"
+ final="false"
+ deprecated="not deprecated"
+ visibility="public"
+>
+<parameter name="key" type="org.mule.modules.varnish.connectivity.VarnishModuleConnectionKey">
+</parameter>
+<parameter name="connection" type="org.mule.modules.varnish.adapters.VarnishModuleConnectionIdentifierAdapter">
+</parameter>
+<exception name="Exception" type="java.lang.Exception">
+</exception>
+</method>
+<method name="getConnectionPoolingProfile"
+ return="org.mule.config.PoolingProfile"
+ abstract="false"
+ native="false"
+ synchronized="false"
+ static="false"
+ final="false"
+ deprecated="not deprecated"
+ visibility="public"
+>
+</method>
+<method name="getDefaultConnectionKey"
+ return="org.mule.modules.varnish.connectivity.VarnishModuleConnectionKey"
+ abstract="false"
+ native="false"
+ synchronized="false"
+ static="false"
+ final="false"
+ deprecated="not deprecated"
+ visibility="public"
+>
+</method>
+<method name="getDevkitBuild"
+ return="java.lang.String"
+ abstract="false"
+ native="false"
+ synchronized="false"
+ static="false"
+ final="false"
+ deprecated="not deprecated"
+ visibility="public"
+>
+</method>
+<method name="getDevkitVersion"
+ return="java.lang.String"
+ abstract="false"
+ native="false"
+ synchronized="false"
+ static="false"
+ final="false"
+ deprecated="not deprecated"
+ visibility="public"
+>
+</method>
+<method name="getFlowConstruct"
+ return="org.mule.api.construct.FlowConstruct"
+ abstract="false"
+ native="false"
+ synchronized="false"
+ static="false"
+ final="false"
+ deprecated="not deprecated"
+ visibility="public"
+>
+</method>
+<method name="getHost"
+ return="java.lang.String"
+ abstract="false"
+ native="false"
+ synchronized="false"
+ static="false"
+ final="false"
+ deprecated="not deprecated"
+ visibility="public"
+>
+</method>
+<method name="getModuleName"
+ return="java.lang.String"
+ abstract="false"
+ native="false"
+ synchronized="false"
+ static="false"
+ final="false"
+ deprecated="not deprecated"
+ visibility="public"
+>
+</method>
+<method name="getModuleVersion"
+ return="java.lang.String"
+ abstract="false"
+ native="false"
+ synchronized="false"
+ static="false"
+ final="false"
+ deprecated="not deprecated"
+ visibility="public"
+>
+</method>
+<method name="getMuleContext"
+ return="org.mule.api.MuleContext"
+ abstract="false"
+ native="false"
+ synchronized="false"
+ static="false"
+ final="false"
+ deprecated="not deprecated"
+ visibility="public"
+>
+</method>
+<method name="getPort"
+ return="int"
+ abstract="false"
+ native="false"
+ synchronized="false"
+ static="false"
+ final="false"
+ deprecated="not deprecated"
+ visibility="public"
+>
+</method>
+<method name="getProcessTemplate"
+ return="org.mule.api.process.ProcessTemplate&lt;P, org.mule.modules.varnish.adapters.VarnishModuleConnectionIdentifierAdapter&gt;"
+ abstract="false"
+ native="false"
+ synchronized="false"
+ static="false"
+ final="false"
+ deprecated="not deprecated"
+ visibility="public"
+>
+</method>
+<method name="getRetryPolicyTemplate"
+ return="org.mule.api.retry.RetryPolicyTemplate"
+ abstract="false"
+ native="false"
+ synchronized="false"
+ static="false"
+ final="false"
+ deprecated="not deprecated"
+ visibility="public"
+>
+</method>
+<method name="getSecret"
+ return="java.lang.String"
+ abstract="false"
+ native="false"
+ synchronized="false"
+ static="false"
+ final="false"
+ deprecated="not deprecated"
+ visibility="public"
+>
+</method>
+<method name="initialise"
+ return="void"
+ abstract="false"
+ native="false"
+ synchronized="false"
+ static="false"
+ final="false"
+ deprecated="not deprecated"
+ visibility="public"
+>
+</method>
+<method name="isCapableOf"
+ return="boolean"
+ abstract="false"
+ native="false"
+ synchronized="false"
+ static="false"
+ final="false"
+ deprecated="not deprecated"
+ visibility="public"
+>
+<parameter name="capability" type="org.mule.api.Capability">
+</parameter>
+</method>
+<method name="releaseConnection"
+ return="void"
+ abstract="false"
+ native="false"
+ synchronized="false"
+ static="false"
+ final="false"
+ deprecated="not deprecated"
+ visibility="public"
+>
+<parameter name="key" type="org.mule.modules.varnish.connectivity.VarnishModuleConnectionKey">
+</parameter>
+<parameter name="connection" type="org.mule.modules.varnish.adapters.VarnishModuleConnectionIdentifierAdapter">
+</parameter>
+<exception name="Exception" type="java.lang.Exception">
+</exception>
+</method>
+<method name="setConnectionPoolingProfile"
+ return="void"
+ abstract="false"
+ native="false"
+ synchronized="false"
+ static="false"
+ final="false"
+ deprecated="not deprecated"
+ visibility="public"
+>
+<parameter name="value" type="org.mule.config.PoolingProfile">
+</parameter>
+</method>
+<method name="setFlowConstruct"
+ return="void"
+ abstract="false"
+ native="false"
+ synchronized="false"
+ static="false"
+ final="false"
+ deprecated="not deprecated"
+ visibility="public"
+>
+<parameter name="value" type="org.mule.api.construct.FlowConstruct">
+</parameter>
+</method>
+<method name="setHost"
+ return="void"
+ abstract="false"
+ native="false"
+ synchronized="false"
+ static="false"
+ final="false"
+ deprecated="not deprecated"
+ visibility="public"
+>
+<parameter name="value" type="java.lang.String">
+</parameter>
+</method>
+<method name="setMuleContext"
+ return="void"
+ abstract="false"
+ native="false"
+ synchronized="false"
+ static="false"
+ final="false"
+ deprecated="not deprecated"
+ visibility="public"
+>
+<parameter name="value" type="org.mule.api.MuleContext">
+</parameter>
+</method>
+<method name="setPort"
+ return="void"
+ abstract="false"
+ native="false"
+ synchronized="false"
+ static="false"
+ final="false"
+ deprecated="not deprecated"
+ visibility="public"
+>
+<parameter name="value" type="int">
+</parameter>
+</method>
+<method name="setRetryPolicyTemplate"
+ return="void"
+ abstract="false"
+ native="false"
+ synchronized="false"
+ static="false"
+ final="false"
+ deprecated="not deprecated"
+ visibility="public"
+>
+<parameter name="value" type="org.mule.api.retry.RetryPolicyTemplate">
+</parameter>
+</method>
+<method name="setSecret"
+ return="void"
+ abstract="false"
+ native="false"
+ synchronized="false"
+ static="false"
+ final="false"
+ deprecated="not deprecated"
+ visibility="public"
+>
+<parameter name="value" type="java.lang.String">
+</parameter>
+</method>
+<field name="DEVKIT_BUILD"
+ type="java.lang.String"
+ transient="false"
+ volatile="false"
+ value="&quot;UNNAMED.1372.db235f3&quot;"
+ static="true"
+ final="true"
+ deprecated="not deprecated"
+ visibility="private"
+>
+</field>
+<field name="DEVKIT_VERSION"
+ type="java.lang.String"
+ transient="false"
+ volatile="false"
+ value="&quot;3.3.2&quot;"
+ static="true"
+ final="true"
+ deprecated="not deprecated"
+ visibility="private"
+>
+</field>
+<field name="MODULE_NAME"
+ type="java.lang.String"
+ transient="false"
+ volatile="false"
+ value="&quot;varnish&quot;"
+ static="true"
+ final="true"
+ deprecated="not deprecated"
+ visibility="private"
+>
+</field>
+<field name="MODULE_VERSION"
+ type="java.lang.String"
+ transient="false"
+ volatile="false"
+ value="&quot;1.0-SNAPSHOT&quot;"
+ static="true"
+ final="true"
+ deprecated="not deprecated"
+ visibility="private"
+>
+</field>
+<field name="connectionPool"
+ type="org.apache.commons.pool.impl.GenericKeyedObjectPool"
+ transient="false"
+ volatile="false"
+ static="false"
+ final="false"
+ deprecated="not deprecated"
+ visibility="private"
+>
+</field>
+<field name="connectionPoolingProfile"
+ type="org.mule.config.PoolingProfile"
+ transient="false"
+ volatile="false"
+ static="false"
+ final="false"
+ deprecated="not deprecated"
+ visibility="protected"
+>
+</field>
+<field name="flowConstruct"
+ type="org.mule.api.construct.FlowConstruct"
+ transient="false"
+ volatile="false"
+ static="false"
+ final="false"
+ deprecated="not deprecated"
+ visibility="protected"
+>
+</field>
+<field name="host"
+ type="java.lang.String"
+ transient="false"
+ volatile="false"
+ static="false"
+ final="false"
+ deprecated="not deprecated"
+ visibility="private"
+>
+</field>
+<field name="muleContext"
+ type="org.mule.api.MuleContext"
+ transient="false"
+ volatile="false"
+ static="false"
+ final="false"
+ deprecated="not deprecated"
+ visibility="protected"
+>
+</field>
+<field name="port"
+ type="int"
+ transient="false"
+ volatile="false"
+ static="false"
+ final="false"
+ deprecated="not deprecated"
+ visibility="private"
+>
+</field>
+<field name="retryPolicyTemplate"
+ type="org.mule.api.retry.RetryPolicyTemplate"
+ transient="false"
+ volatile="false"
+ static="false"
+ final="false"
+ deprecated="not deprecated"
+ visibility="protected"
+>
+</field>
+<field name="secret"
+ type="java.lang.String"
+ transient="false"
+ volatile="false"
+ static="false"
+ final="false"
+ deprecated="not deprecated"
+ visibility="private"
+>
+</field>
+</class>
+</package>
+<package name="org.mule.modules.varnish.process"
+>
+<class name="ManagedConnectionProcessInterceptor"
+ extends="org.mule.modules.varnish.processors.AbstractExpressionEvaluator"
+ abstract="false"
+ static="false"
+ final="false"
+ deprecated="not deprecated"
+ visibility="public"
+>
+<implements name="org.mule.api.process.ProcessInterceptor">
+</implements>
+<constructor name="ManagedConnectionProcessInterceptor"
+ type="org.mule.modules.varnish.process.ManagedConnectionProcessInterceptor"
+ static="false"
+ final="false"
+ deprecated="not deprecated"
+ visibility="public"
+>
+<parameter name="next" type="org.mule.api.process.ProcessInterceptor&lt;T, org.mule.modules.varnish.adapters.VarnishModuleConnectionIdentifierAdapter&gt;">
+</parameter>
+<parameter name="connectionManager" type="org.mule.api.ConnectionManager&lt;org.mule.modules.varnish.connectivity.VarnishModuleConnectionKey, org.mule.modules.varnish.adapters.VarnishModuleConnectionIdentifierAdapter&gt;">
+</parameter>
+<parameter name="muleContext" type="org.mule.api.MuleContext">
+</parameter>
+</constructor>
+<method name="execute"
+ return="T"
+ abstract="false"
+ native="false"
+ synchronized="false"
+ static="false"
+ final="false"
+ deprecated="not deprecated"
+ visibility="public"
+>
+<parameter name="processCallback" type="org.mule.api.process.ProcessCallback&lt;T, org.mule.modules.varnish.adapters.VarnishModuleConnectionIdentifierAdapter&gt;">
+</parameter>
+<parameter name="object" type="org.mule.modules.varnish.adapters.VarnishModuleConnectionIdentifierAdapter">
+</parameter>
+<parameter name="messageProcessor" type="org.mule.api.processor.MessageProcessor">
+</parameter>
+<parameter name="event" type="org.mule.api.MuleEvent">
+</parameter>
+<exception name="Exception" type="java.lang.Exception">
+</exception>
+</method>
+<method name="execute"
+ return="T"
+ abstract="false"
+ native="false"
+ synchronized="false"
+ static="false"
+ final="false"
+ deprecated="not deprecated"
+ visibility="public"
+>
+<parameter name="processCallback" type="org.mule.api.process.ProcessCallback&lt;T, org.mule.modules.varnish.adapters.VarnishModuleConnectionIdentifierAdapter&gt;">
+</parameter>
+<parameter name="object" type="org.mule.modules.varnish.adapters.VarnishModuleConnectionIdentifierAdapter">
+</parameter>
+<parameter name="filter" type="org.mule.api.routing.filter.Filter">
+</parameter>
+<parameter name="message" type="org.mule.api.MuleMessage">
+</parameter>
+<exception name="Exception" type="java.lang.Exception">
+</exception>
+</method>
+<field name="connectionManager"
+ type="org.mule.api.ConnectionManager"
+ transient="false"
+ volatile="false"
+ static="false"
+ final="true"
+ deprecated="not deprecated"
+ visibility="private"
+>
+</field>
+<field name="logger"
+ type="org.slf4j.Logger"
+ transient="false"
+ volatile="false"
+ static="true"
+ final="false"
+ deprecated="not deprecated"
+ visibility="private"
+>
+</field>
+<field name="muleContext"
+ type="org.mule.api.MuleContext"
+ transient="false"
+ volatile="false"
+ static="false"
+ final="true"
+ deprecated="not deprecated"
+ visibility="private"
+>
+</field>
+<field name="next"
+ type="org.mule.api.process.ProcessInterceptor"
+ transient="false"
+ volatile="false"
+ static="false"
+ final="true"
+ deprecated="not deprecated"
+ visibility="private"
+>
+</field>
+</class>
+<class name="NestedProcessorChain"
+ extends="java.lang.Object"
+ abstract="false"
+ static="false"
+ final="false"
+ deprecated="not deprecated"
+ visibility="public"
+>
+<constructor name="NestedProcessorChain"
+ type="org.mule.modules.varnish.process.NestedProcessorChain"
+ static="false"
+ final="false"
+ deprecated="not deprecated"
+ visibility="public"
+>
+<parameter name="event" type="org.mule.api.MuleEvent">
+</parameter>
+<parameter name="muleContext" type="org.mule.api.MuleContext">
+</parameter>
+<parameter name="chain" type="org.mule.api.processor.MessageProcessor">
+</parameter>
+</constructor>
+<method name="process"
+ return="java.lang.Object"
+ abstract="false"
+ native="false"
+ synchronized="false"
+ static="false"
+ final="false"
+ deprecated="not deprecated"
+ visibility="public"
+>
+<exception name="Exception" type="java.lang.Exception">
+</exception>
+</method>
+<method name="process"
+ return="java.lang.Object"
+ abstract="false"
+ native="false"
+ synchronized="false"
+ static="false"
+ final="false"
+ deprecated="not deprecated"
+ visibility="public"
+>
+<parameter name="payload" type="java.lang.Object">
+</parameter>
+<exception name="Exception" type="java.lang.Exception">
+</exception>
+</method>
+<method name="process"
+ return="java.lang.Object"
+ abstract="false"
+ native="false"
+ synchronized="false"
+ static="false"
+ final="false"
+ deprecated="not deprecated"
+ visibility="public"
+>
+<parameter name="payload" type="java.lang.Object">
+</parameter>
+<parameter name="properties" type="java.util.Map&lt;java.lang.String, java.lang.Object&gt;">
+</parameter>
+<exception name="Exception" type="java.lang.Exception">
+</exception>
+</method>
+<method name="processWithExtraProperties"
+ return="java.lang.Object"
+ abstract="false"
+ native="false"
+ synchronized="false"
+ static="false"
+ final="false"
+ deprecated="not deprecated"
+ visibility="public"
+>
+<parameter name="properties" type="java.util.Map&lt;java.lang.String, java.lang.Object&gt;">
+</parameter>
+<exception name="Exception" type="java.lang.Exception">
+</exception>
+</method>
+<method name="setChain"
+ return="void"
+ abstract="false"
+ native="false"
+ synchronized="false"
+ static="false"
+ final="false"
+ deprecated="not deprecated"
+ visibility="public"
+>
+<parameter name="value" type="org.mule.api.processor.MessageProcessor">
+</parameter>
+</method>
+<method name="setEvent"
+ return="void"
+ abstract="false"
+ native="false"
+ synchronized="false"
+ static="false"
+ final="false"
+ deprecated="not deprecated"
+ visibility="public"
+>
+<parameter name="value" type="org.mule.api.MuleEvent">
+</parameter>
+</method>
+<method name="setMuleContext"
+ return="void"
+ abstract="false"
+ native="false"
+ synchronized="false"
+ static="false"
+ final="false"
+ deprecated="not deprecated"
+ visibility="public"
+>
+<parameter name="value" type="org.mule.api.MuleContext">
+</parameter>
+</method>
+<field name="chain"
+ type="org.mule.api.processor.MessageProcessor"
+ transient="false"
+ volatile="false"
+ static="false"
+ final="false"
+ deprecated="not deprecated"
+ visibility="private"
+>
+</field>
+<field name="event"
+ type="org.mule.api.MuleEvent"
+ transient="false"
+ volatile="false"
+ static="false"
+ final="false"
+ deprecated="not deprecated"
+ visibility="private"
+>
+</field>
+<field name="muleContext"
+ type="org.mule.api.MuleContext"
+ transient="false"
+ volatile="false"
+ static="false"
+ final="false"
+ deprecated="not deprecated"
+ visibility="private"
+>
+</field>
+</class>
+<class name="ProcessCallbackProcessInterceptor"
+ extends="java.lang.Object"
+ abstract="false"
+ static="false"
+ final="false"
+ deprecated="not deprecated"
+ visibility="public"
+>
+<implements name="org.mule.api.process.ProcessInterceptor">
+</implements>
+<constructor name="ProcessCallbackProcessInterceptor"
+ type="org.mule.modules.varnish.process.ProcessCallbackProcessInterceptor"
+ static="false"
+ final="false"
+ deprecated="not deprecated"
+ visibility="public"
+>
+</constructor>
+<method name="execute"
+ return="T"
+ abstract="false"
+ native="false"
+ synchronized="false"
+ static="false"
+ final="false"
+ deprecated="not deprecated"
+ visibility="public"
+>
+<parameter name="processCallback" type="org.mule.api.process.ProcessCallback&lt;T, O&gt;">
+</parameter>
+<parameter name="object" type="O">
+</parameter>
+<parameter name="messageProcessor" type="org.mule.api.processor.MessageProcessor">
+</parameter>
+<parameter name="event" type="org.mule.api.MuleEvent">
+</parameter>
+<exception name="Exception" type="java.lang.Exception">
+</exception>
+</method>
+<method name="execute"
+ return="T"
+ abstract="false"
+ native="false"
+ synchronized="false"
+ static="false"
+ final="false"
+ deprecated="not deprecated"
+ visibility="public"
+>
+<parameter name="processCallback" type="org.mule.api.process.ProcessCallback&lt;T, O&gt;">
+</parameter>
+<parameter name="object" type="O">
+</parameter>
+<parameter name="filter" type="org.mule.api.routing.filter.Filter">
+</parameter>
+<parameter name="message" type="org.mule.api.MuleMessage">
+</parameter>
+<exception name="Exception" type="java.lang.Exception">
+</exception>
+</method>
+</class>
+<class name="RetryProcessInterceptor"
+ extends="java.lang.Object"
+ abstract="false"
+ static="false"
+ final="false"
+ deprecated="not deprecated"
+ visibility="public"
+>
+<implements name="org.mule.api.process.ProcessInterceptor">
+</implements>
+<constructor name="RetryProcessInterceptor"
+ type="org.mule.modules.varnish.process.RetryProcessInterceptor"
+ static="false"
+ final="false"
+ deprecated="not deprecated"
+ visibility="public"
+>
+<parameter name="next" type="org.mule.api.process.ProcessInterceptor&lt;T, O&gt;">
+</parameter>
+<parameter name="muleContext" type="org.mule.api.MuleContext">
+</parameter>
+<parameter name="retryPolicyTemplate" type="org.mule.api.retry.RetryPolicyTemplate">
+</parameter>
+</constructor>
+<method name="execute"
+ return="T"
+ abstract="false"
+ native="false"
+ synchronized="false"
+ static="false"
+ final="false"
+ deprecated="not deprecated"
+ visibility="public"
+>
+<parameter name="processCallback" type="org.mule.api.process.ProcessCallback&lt;T, O&gt;">
+</parameter>
+<parameter name="object" type="O">
+</parameter>
+<parameter name="messageProcessor" type="org.mule.api.processor.MessageProcessor">
+</parameter>
+<parameter name="event" type="org.mule.api.MuleEvent">
+</parameter>
+<exception name="Exception" type="java.lang.Exception">
+</exception>
+</method>
+<method name="execute"
+ return="T"
+ abstract="false"
+ native="false"
+ synchronized="false"
+ static="false"
+ final="false"
+ deprecated="not deprecated"
+ visibility="public"
+>
+<parameter name="processCallback" type="org.mule.api.process.ProcessCallback&lt;T, O&gt;">
+</parameter>
+<parameter name="object" type="O">
+</parameter>
+<parameter name="filter" type="org.mule.api.routing.filter.Filter">
+</parameter>
+<parameter name="message" type="org.mule.api.MuleMessage">
+</parameter>
+<exception name="Exception" type="java.lang.Exception">
+</exception>
+</method>
+<method name="getMuleContext"
+ return="org.mule.api.MuleContext"
+ abstract="false"
+ native="false"
+ synchronized="false"
+ static="false"
+ final="false"
+ deprecated="not deprecated"
+ visibility="public"
+>
+</method>
+<method name="setMuleContext"
+ return="void"
+ abstract="false"
+ native="false"
+ synchronized="false"
+ static="false"
+ final="false"
+ deprecated="not deprecated"
+ visibility="public"
+>
+<parameter name="value" type="org.mule.api.MuleContext">
+</parameter>
+</method>
+<field name="logger"
+ type="org.slf4j.Logger"
+ transient="false"
+ volatile="false"
+ static="true"
+ final="false"
+ deprecated="not deprecated"
+ visibility="private"
+>
+</field>
+<field name="metaInfo"
+ type="java.util.Map"
+ transient="false"
+ volatile="false"
+ static="false"
+ final="true"
+ deprecated="not deprecated"
+ visibility="private"
+>
+</field>
+<field name="muleContext"
+ type="org.mule.api.MuleContext"
+ transient="false"
+ volatile="false"
+ static="false"
+ final="false"
+ deprecated="not deprecated"
+ visibility="protected"
+>
+</field>
+<field name="next"
+ type="org.mule.api.process.ProcessInterceptor"
+ transient="false"
+ volatile="false"
+ static="false"
+ final="true"
+ deprecated="not deprecated"
+ visibility="private"
+>
+</field>
+<field name="retryPolicyTemplate"
+ type="org.mule.api.retry.RetryPolicyTemplate"
+ transient="false"
+ volatile="false"
+ static="false"
+ final="true"
+ deprecated="not deprecated"
+ visibility="private"
+>
+</field>
+</class>
+</package>
+<package name="org.mule.modules.varnish.processors"
+>
+<class name="AbstractConnectedProcessor"
+ extends="org.mule.modules.varnish.processors.AbstractExpressionEvaluator"
+ abstract="true"
+ static="false"
+ final="false"
+ deprecated="not deprecated"
+ visibility="public"
+>
+<constructor name="AbstractConnectedProcessor"
+ type="org.mule.modules.varnish.processors.AbstractConnectedProcessor"
+ static="false"
+ final="false"
+ deprecated="not deprecated"
+ visibility="public"
+>
+</constructor>
+<method name="getHost"
+ return="java.lang.Object"
+ abstract="false"
+ native="false"
+ synchronized="false"
+ static="false"
+ final="false"
+ deprecated="not deprecated"
+ visibility="public"
+>
+</method>
+<method name="getPort"
+ return="java.lang.Object"
+ abstract="false"
+ native="false"
+ synchronized="false"
+ static="false"
+ final="false"
+ deprecated="not deprecated"
+ visibility="public"
+>
+</method>
+<method name="getSecret"
+ return="java.lang.Object"
+ abstract="false"
+ native="false"
+ synchronized="false"
+ static="false"
+ final="false"
+ deprecated="not deprecated"
+ visibility="public"
+>
+</method>
+<method name="setHost"
+ return="void"
+ abstract="false"
+ native="false"
+ synchronized="false"
+ static="false"
+ final="false"
+ deprecated="not deprecated"
+ visibility="public"
+>
+<parameter name="value" type="java.lang.Object">
+</parameter>
+</method>
+<method name="setPort"
+ return="void"
+ abstract="false"
+ native="false"
+ synchronized="false"
+ static="false"
+ final="false"
+ deprecated="not deprecated"
+ visibility="public"
+>
+<parameter name="value" type="java.lang.Object">
+</parameter>
+</method>
+<method name="setSecret"
+ return="void"
+ abstract="false"
+ native="false"
+ synchronized="false"
+ static="false"
+ final="false"
+ deprecated="not deprecated"
+ visibility="public"
+>
+<parameter name="value" type="java.lang.Object">
+</parameter>
+</method>
+<field name="_hostType"
+ type="java.lang.String"
+ transient="false"
+ volatile="false"
+ static="false"
+ final="false"
+ deprecated="not deprecated"
+ visibility="protected"
+>
+</field>
+<field name="_portType"
+ type="int"
+ transient="false"
+ volatile="false"
+ static="false"
+ final="false"
+ deprecated="not deprecated"
+ visibility="protected"
+>
+</field>
+<field name="_secretType"
+ type="java.lang.String"
+ transient="false"
+ volatile="false"
+ static="false"
+ final="false"
+ deprecated="not deprecated"
+ visibility="protected"
+>
+</field>
+<field name="host"
+ type="java.lang.Object"
+ transient="false"
+ volatile="false"
+ static="false"
+ final="false"
+ deprecated="not deprecated"
+ visibility="protected"
+>
+</field>
+<field name="port"
+ type="java.lang.Object"
+ transient="false"
+ volatile="false"
+ static="false"
+ final="false"
+ deprecated="not deprecated"
+ visibility="protected"
+>
+</field>
+<field name="secret"
+ type="java.lang.Object"
+ transient="false"
+ volatile="false"
+ static="false"
+ final="false"
+ deprecated="not deprecated"
+ visibility="protected"
+>
+</field>
+</class>
+<class name="AbstractExpressionEvaluator"
+ extends="java.lang.Object"
+ abstract="true"
+ static="false"
+ final="false"
+ deprecated="not deprecated"
+ visibility="public"
+>
+<constructor name="AbstractExpressionEvaluator"
+ type="org.mule.modules.varnish.processors.AbstractExpressionEvaluator"
+ static="false"
+ final="false"
+ deprecated="not deprecated"
+ visibility="public"
+>
+</constructor>
+<method name="computeClassHierarchy"
+ return="void"
+ abstract="false"
+ native="false"
+ synchronized="false"
+ static="false"
+ final="false"
+ deprecated="not deprecated"
+ visibility="protected"
+>
+<parameter name="clazz" type="java.lang.Class">
+</parameter>
+<parameter name="classes" type="java.util.List">
+</parameter>
+</method>
+<method name="evaluate"
+ return="java.lang.Object"
+ abstract="false"
+ native="false"
+ synchronized="false"
+ static="false"
+ final="false"
+ deprecated="not deprecated"
+ visibility="protected"
+>
+<parameter name="patternInfo" type="org.mule.util.TemplateParser.PatternInfo">
+</parameter>
+<parameter name="expressionManager" type="org.mule.api.expression.ExpressionManager">
+</parameter>
+<parameter name="muleMessage" type="org.mule.api.MuleMessage">
+</parameter>
+<parameter name="source" type="java.lang.Object">
+</parameter>
+</method>
+<method name="evaluateAndTransform"
+ return="java.lang.Object"
+ abstract="false"
+ native="false"
+ synchronized="false"
+ static="false"
+ final="false"
+ deprecated="not deprecated"
+ visibility="protected"
+>
+<parameter name="muleContext" type="org.mule.api.MuleContext">
+</parameter>
+<parameter name="event" type="org.mule.api.MuleEvent">
+</parameter>
+<parameter name="expectedType" type="java.lang.reflect.Type">
+</parameter>
+<parameter name="expectedMimeType" type="java.lang.String">
+</parameter>
+<parameter name="source" type="java.lang.Object">
+</parameter>
+<exception name="TransformerException" type="org.mule.api.transformer.TransformerException">
+</exception>
+<exception name="TransformerMessagingException" type="org.mule.api.transformer.TransformerMessagingException">
+</exception>
+</method>
+<method name="evaluateAndTransform"
+ return="java.lang.Object"
+ abstract="false"
+ native="false"
+ synchronized="false"
+ static="false"
+ final="false"
+ deprecated="not deprecated"
+ visibility="protected"
+>
+<parameter name="muleContext" type="org.mule.api.MuleContext">
+</parameter>
+<parameter name="muleMessage" type="org.mule.api.MuleMessage">
+</parameter>
+<parameter name="expectedType" type="java.lang.reflect.Type">
+</parameter>
+<parameter name="expectedMimeType" type="java.lang.String">
+</parameter>
+<parameter name="source" type="java.lang.Object">
+</parameter>
+<exception name="TransformerException" type="org.mule.api.transformer.TransformerException">
+</exception>
+<exception name="TransformerMessagingException" type="org.mule.api.transformer.TransformerMessagingException">
+</exception>
+</method>
+<method name="isAssignableFrom"
+ return="boolean"
+ abstract="false"
+ native="false"
+ synchronized="false"
+ static="false"
+ final="false"
+ deprecated="not deprecated"
+ visibility="protected"
+>
+<parameter name="expectedType" type="java.lang.reflect.Type">
+</parameter>
+<parameter name="clazz" type="java.lang.Class">
+</parameter>
+</method>
+<method name="isList"
+ return="boolean"
+ abstract="false"
+ native="false"
+ synchronized="false"
+ static="false"
+ final="false"
+ deprecated="not deprecated"
+ visibility="protected"
+>
+<parameter name="type" type="java.lang.reflect.Type">
+</parameter>
+</method>
+<method name="isListClass"
+ return="boolean"
+ abstract="false"
+ native="false"
+ synchronized="false"
+ static="false"
+ final="false"
+ deprecated="not deprecated"
+ visibility="protected"
+>
+<parameter name="clazz" type="java.lang.Class">
+</parameter>
+</method>
+<method name="isMap"
+ return="boolean"
+ abstract="false"
+ native="false"
+ synchronized="false"
+ static="false"
+ final="false"
+ deprecated="not deprecated"
+ visibility="protected"
+>
+<parameter name="type" type="java.lang.reflect.Type">
+</parameter>
+</method>
+<method name="isMapClass"
+ return="boolean"
+ abstract="false"
+ native="false"
+ synchronized="false"
+ static="false"
+ final="false"
+ deprecated="not deprecated"
+ visibility="protected"
+>
+<parameter name="clazz" type="java.lang.Class">
+</parameter>
+</method>
+<method name="transform"
+ return="java.lang.Object"
+ abstract="false"
+ native="false"
+ synchronized="false"
+ static="false"
+ final="false"
+ deprecated="not deprecated"
+ visibility="protected"
+>
+<parameter name="muleMessage" type="org.mule.api.MuleMessage">
+</parameter>
+<parameter name="expectedType" type="java.lang.reflect.Type">
+</parameter>
+<parameter name="source" type="java.lang.Object">
+</parameter>
+<exception name="TransformerException" type="org.mule.api.transformer.TransformerException">
+</exception>
+</method>
+<method name="transform"
+ return="java.lang.Object"
+ abstract="false"
+ native="false"
+ synchronized="false"
+ static="false"
+ final="false"
+ deprecated="not deprecated"
+ visibility="protected"
+>
+<parameter name="muleContext" type="org.mule.api.MuleContext">
+</parameter>
+<parameter name="event" type="org.mule.api.MuleEvent">
+</parameter>
+<parameter name="expectedType" type="java.lang.reflect.Type">
+</parameter>
+<parameter name="expectedMimeType" type="java.lang.String">
+</parameter>
+<parameter name="source" type="java.lang.Object">
+</parameter>
+<exception name="TransformerException" type="org.mule.api.transformer.TransformerException">
+</exception>
+<exception name="TransformerMessagingException" type="org.mule.api.transformer.TransformerMessagingException">
+</exception>
+</method>
+<method name="transform"
+ return="java.lang.Object"
+ abstract="false"
+ native="false"
+ synchronized="false"
+ static="false"
+ final="false"
+ deprecated="not deprecated"
+ visibility="protected"
+>
+<parameter name="muleContext" type="org.mule.api.MuleContext">
+</parameter>
+<parameter name="message" type="org.mule.api.MuleMessage">
+</parameter>
+<parameter name="expectedType" type="java.lang.reflect.Type">
+</parameter>
+<parameter name="expectedMimeType" type="java.lang.String">
+</parameter>
+<parameter name="source" type="java.lang.Object">
+</parameter>
+<exception name="TransformerException" type="org.mule.api.transformer.TransformerException">
+</exception>
+<exception name="TransformerMessagingException" type="org.mule.api.transformer.TransformerMessagingException">
+</exception>
+</method>
+</class>
+<class name="AbstractListeningMessageProcessor"
+ extends="org.mule.modules.varnish.processors.AbstractMessageProcessor"
+ abstract="true"
+ static="false"
+ final="false"
+ deprecated="not deprecated"
+ visibility="public"
+>
+<constructor name="AbstractListeningMessageProcessor"
+ type="org.mule.modules.varnish.processors.AbstractListeningMessageProcessor"
+ static="false"
+ final="false"
+ deprecated="not deprecated"
+ visibility="public"
+>
+</constructor>
+<method name="getMessageProcessor"
+ return="org.mule.api.processor.MessageProcessor"
+ abstract="false"
+ native="false"
+ synchronized="false"
+ static="false"
+ final="false"
+ deprecated="not deprecated"
+ visibility="public"
+>
+</method>
+<method name="process"
+ return="java.lang.Object"
+ abstract="false"
+ native="false"
+ synchronized="false"
+ static="false"
+ final="false"
+ deprecated="not deprecated"
+ visibility="public"
+>
+<parameter name="message" type="java.lang.Object">
+</parameter>
+<exception name="Exception" type="java.lang.Exception">
+</exception>
+</method>
+<method name="process"
+ return="java.lang.Object"
+ abstract="false"
+ native="false"
+ synchronized="false"
+ static="false"
+ final="false"
+ deprecated="not deprecated"
+ visibility="public"
+>
+<parameter name="message" type="java.lang.Object">
+</parameter>
+<parameter name="properties" type="java.util.Map&lt;java.lang.String, java.lang.Object&gt;">
+</parameter>
+<exception name="Exception" type="java.lang.Exception">
+</exception>
+</method>
+<method name="process"
+ return="java.lang.Object"
+ abstract="false"
+ native="false"
+ synchronized="false"
+ static="false"
+ final="false"
+ deprecated="not deprecated"
+ visibility="public"
+>
+<exception name="Exception" type="java.lang.Exception">
+</exception>
+</method>
+<method name="processEvent"
+ return="org.mule.api.MuleEvent"
+ abstract="false"
+ native="false"
+ synchronized="false"
+ static="false"
+ final="false"
+ deprecated="not deprecated"
+ visibility="public"
+>
+<parameter name="event" type="org.mule.api.MuleEvent">
+</parameter>
+<exception name="MuleException" type="org.mule.api.MuleException">
+</exception>
+</method>
+<method name="setListener"
+ return="void"
+ abstract="false"
+ native="false"
+ synchronized="false"
+ static="false"
+ final="false"
+ deprecated="not deprecated"
+ visibility="public"
+>
+<parameter name="listener" type="org.mule.api.processor.MessageProcessor">
+</parameter>
+</method>
+<field name="messageProcessor"
+ type="org.mule.api.processor.MessageProcessor"
+ transient="false"
+ volatile="false"
+ static="false"
+ final="false"
+ deprecated="not deprecated"
+ visibility="private"
+>
+</field>
+</class>
+<class name="AbstractMessageProcessor"
+ extends="org.mule.modules.varnish.processors.AbstractConnectedProcessor"
+ abstract="true"
+ static="false"
+ final="false"
+ deprecated="not deprecated"
+ visibility="public"
+>
+<constructor name="AbstractMessageProcessor"
+ type="org.mule.modules.varnish.processors.AbstractMessageProcessor"
+ static="false"
+ final="false"
+ deprecated="not deprecated"
+ visibility="public"
+>
+</constructor>
+<method name="findOrCreate"
+ return="O"
+ abstract="false"
+ native="false"
+ synchronized="false"
+ static="false"
+ final="false"
+ deprecated="not deprecated"
+ visibility="protected"
+>
+<parameter name="moduleClass" type="java.lang.Class">
+</parameter>
+<parameter name="shouldAutoCreate" type="boolean">
+</parameter>
+<parameter name="muleEvent" type="org.mule.api.MuleEvent">
+</parameter>
+<exception name="ConfigurationException" type="org.mule.api.config.ConfigurationException">
+</exception>
+<exception name="IllegalAccessException" type="java.lang.IllegalAccessException">
+</exception>
+<exception name="InstantiationException" type="java.lang.InstantiationException">
+</exception>
+<exception name="RegistrationException" type="org.mule.api.registry.RegistrationException">
+</exception>
+</method>
+<method name="getFlowConstruct"
+ return="org.mule.api.construct.FlowConstruct"
+ abstract="false"
+ native="false"
+ synchronized="false"
+ static="false"
+ final="false"
+ deprecated="not deprecated"
+ visibility="public"
+>
+</method>
+<method name="getMuleContext"
+ return="org.mule.api.MuleContext"
+ abstract="false"
+ native="false"
+ synchronized="false"
+ static="false"
+ final="false"
+ deprecated="not deprecated"
+ visibility="public"
+>
+</method>
+<method name="overwritePayload"
+ return="void"
+ abstract="false"
+ native="false"
+ synchronized="false"
+ static="false"
+ final="false"
+ deprecated="not deprecated"
+ visibility="public"
+>
+<parameter name="event" type="org.mule.api.MuleEvent">
+</parameter>
+<parameter name="resultPayload" type="java.lang.Object">
+</parameter>
+<exception name="Exception" type="java.lang.Exception">
+</exception>
+</method>
+<method name="setFlowConstruct"
+ return="void"
+ abstract="false"
+ native="false"
+ synchronized="false"
+ static="false"
+ final="false"
+ deprecated="not deprecated"
+ visibility="public"
+>
+<parameter name="value" type="org.mule.api.construct.FlowConstruct">
+</parameter>
+</method>
+<method name="setModuleObject"
+ return="void"
+ abstract="false"
+ native="false"
+ synchronized="false"
+ static="false"
+ final="false"
+ deprecated="not deprecated"
+ visibility="public"
+>
+<parameter name="value" type="O">
+</parameter>
+</method>
+<method name="setMuleContext"
+ return="void"
+ abstract="false"
+ native="false"
+ synchronized="false"
+ static="false"
+ final="false"
+ deprecated="not deprecated"
+ visibility="public"
+>
+<parameter name="value" type="org.mule.api.MuleContext">
+</parameter>
+</method>
+<field name="flowConstruct"
+ type="org.mule.api.construct.FlowConstruct"
+ transient="false"
+ volatile="false"
+ static="false"
+ final="false"
+ deprecated="not deprecated"
+ visibility="protected"
+>
+</field>
+<field name="moduleObject"
+ type="O"
+ transient="false"
+ volatile="false"
+ static="false"
+ final="false"
+ deprecated="not deprecated"
+ visibility="protected"
+>
+</field>
+<field name="muleContext"
+ type="org.mule.api.MuleContext"
+ transient="false"
+ volatile="false"
+ static="false"
+ final="false"
+ deprecated="not deprecated"
+ visibility="protected"
+>
+</field>
+</class>
+<class name="BanUrlMessageProcessor"
+ extends="org.mule.modules.varnish.processors.AbstractMessageProcessor"
+ abstract="false"
+ static="false"
+ final="false"
+ deprecated="not deprecated"
+ visibility="public"
+>
+<implements name="org.mule.api.lifecycle.Initialisable">
+</implements>
+<implements name="org.mule.api.processor.MessageProcessor">
+</implements>
+<constructor name="BanUrlMessageProcessor"
+ type="org.mule.modules.varnish.processors.BanUrlMessageProcessor"
+ static="false"
+ final="false"
+ deprecated="not deprecated"
+ visibility="public"
+>
+</constructor>
+<method name="dispose"
+ return="void"
+ abstract="false"
+ native="false"
+ synchronized="false"
+ static="false"
+ final="false"
+ deprecated="not deprecated"
+ visibility="public"
+>
+</method>
+<method name="initialise"
+ return="void"
+ abstract="false"
+ native="false"
+ synchronized="false"
+ static="false"
+ final="false"
+ deprecated="not deprecated"
+ visibility="public"
+>
+<exception name="InitialisationException" type="org.mule.api.lifecycle.InitialisationException">
+</exception>
+</method>
+<method name="process"
+ return="org.mule.api.MuleEvent"
+ abstract="false"
+ native="false"
+ synchronized="false"
+ static="false"
+ final="false"
+ deprecated="not deprecated"
+ visibility="public"
+>
+<parameter name="event" type="org.mule.api.MuleEvent">
+</parameter>
+<exception name="MuleException" type="org.mule.api.MuleException">
+</exception>
+</method>
+<method name="setUrl"
+ return="void"
+ abstract="false"
+ native="false"
+ synchronized="false"
+ static="false"
+ final="false"
+ deprecated="not deprecated"
+ visibility="public"
+>
+<parameter name="value" type="java.lang.Object">
+</parameter>
+</method>
+<method name="start"
+ return="void"
+ abstract="false"
+ native="false"
+ synchronized="false"
+ static="false"
+ final="false"
+ deprecated="not deprecated"
+ visibility="public"
+>
+<exception name="MuleException" type="org.mule.api.MuleException">
+</exception>
+</method>
+<method name="stop"
+ return="void"
+ abstract="false"
+ native="false"
+ synchronized="false"
+ static="false"
+ final="false"
+ deprecated="not deprecated"
+ visibility="public"
+>
+<exception name="MuleException" type="org.mule.api.MuleException">
+</exception>
+</method>
+<field name="_urlType"
+ type="java.lang.String"
+ transient="false"
+ volatile="false"
+ static="false"
+ final="false"
+ deprecated="not deprecated"
+ visibility="protected"
+>
+</field>
+<field name="url"
+ type="java.lang.Object"
+ transient="false"
+ volatile="false"
+ static="false"
+ final="false"
+ deprecated="not deprecated"
+ visibility="protected"
+>
+</field>
+</class>
+</package>
+</api>

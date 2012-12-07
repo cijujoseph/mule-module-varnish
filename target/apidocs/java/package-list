@@ -1,0 +1,8 @@
+org.mule.modules.varnish
+org.mule.modules.varnish.adapters
+org.mule.modules.varnish.agents
+org.mule.modules.varnish.config
+org.mule.modules.varnish.connectivity
+org.mule.modules.varnish.process
+org.mule.modules.varnish.processors
+
