@@ -25,8 +25,6 @@ public class VarnishModuleTest extends FunctionalTestCase {
 
     @Override
     protected void doSetUp() throws Exception {
-        RestAssured.port = serverPort.getNumber();
-
         super.doSetUp();
     }
 
