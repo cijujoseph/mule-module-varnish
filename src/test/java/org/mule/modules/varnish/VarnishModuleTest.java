@@ -11,7 +11,6 @@
 
 package org.mule.modules.varnish;
 
-import com.jayway.restassured.RestAssured;
 import org.junit.Ignore;
 import org.junit.Rule;
 import org.junit.Test;
