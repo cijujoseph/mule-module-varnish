@@ -10,9 +10,9 @@
         http://www.mulesoft.org/schema/mule/varnish http://www.mulesoft.org/schema/mule/varnish/current/mule-varnish.xsd">
 
     <flow name="banUrl">
+        <varnish:ban-url url="/organizations/starbucks" host="varnish-1.ci.habitat.io" port="6082" secret="9fbfbea9-f5c2-424d-875a-4a235aba168b"/>
+        <!-- <varnish:ban-url url="/organizations/starbucks" host="127.0.0.1" port="6082" secret="010c6c3b-28be-409a-b28b-2691543dc90b"/>
         <varnish:ban-url url="/organizations/starbucks" host="127.0.0.1" port="6082" secret="010c6c3b-28be-409a-b28b-2691543dc90b"/>
-        <varnish:ban-url url="/organizations/starbucks" host="127.0.0.1" port="6082" secret="010c6c3b-28be-409a-b28b-2691543dc90b"/>
-        <varnish:ban-url url="/organizations/starbucks" host="127.0.0.1" port="6082" secret="010c6c3b-28be-409a-b28b-2691543dc90b"/>
-        <varnish:ban-url url="/organizations/starbucks" host="127.0.0.1" port="6082" secret="010c6c3b-28be-409a-b28b-2691543dc90b"/>
+        <varnish:ban-url url="/organizations/starbucks" host="127.0.0.1" port="6082" secret="010c6c3b-28be-409a-b28b-2691543dc90b"/> -->
     </flow>
 </mule>

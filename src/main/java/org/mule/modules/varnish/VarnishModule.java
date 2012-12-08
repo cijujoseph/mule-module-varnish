@@ -125,7 +125,7 @@ public class VarnishModule extends SimpleChannelHandler {
 
         try {
             MessageDigest md = MessageDigest.getInstance("SHA-256");
-            String messageToDigest = challenge + '\n' + secret + challenge + '\n';
+            String messageToDigest = challenge + '\n' + secret + '\n' + challenge + '\n';
             md.update(messageToDigest.getBytes("US-ASCII"));
 
             String sha256 = new String(Hex.encodeHex(md.digest()));
