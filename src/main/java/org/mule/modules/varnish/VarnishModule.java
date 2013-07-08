@@ -23,6 +23,7 @@ import org.jboss.netty.channel.SimpleChannelHandler;
 import org.jboss.netty.channel.socket.nio.NioClientSocketChannelFactory;
 import org.mule.api.ConnectionException;
 import org.mule.api.ConnectionExceptionCode;
+import org.mule.api.annotations.Configurable;
 import org.mule.api.annotations.Connect;
 import org.mule.api.annotations.ConnectionIdentifier;
 import org.mule.api.annotations.Connector;
@@ -31,6 +32,8 @@ import org.mule.api.annotations.InvalidateConnectionOn;
 import org.mule.api.annotations.Processor;
 import org.mule.api.annotations.ValidateConnection;
 import org.mule.api.annotations.param.ConnectionKey;
+import org.mule.api.annotations.param.Default;
+import org.mule.api.annotations.param.Optional;
 
 import java.io.UnsupportedEncodingException;
 import java.net.InetSocketAddress;
@@ -62,6 +65,15 @@ public class VarnishModule extends SimpleChannelHandler {
     private final Lock lock = new ReentrantLock();
     private final Queue<Callback> callbacks = new ConcurrentLinkedQueue<Callback>();
 
+
+    /**
+     * Connection timeout in milliseconds. By default the connection timeout is set to 1000 milliseconds.
+     */
+    @Configurable
+    @Optional
+    @Default("1000")
+    private int connectTimeout;
+
     /**
      * Connect to Varnish management port
      *
@@ -80,6 +92,7 @@ public class VarnishModule extends SimpleChannelHandler {
         bootstrap.setPipelineFactory(new VarnishPipelineFactory(simpleChannelHandler));
         bootstrap.setOption("tcpNoDelay", true);
         bootstrap.setOption("keepAlive", true);
+        bootstrap.setOption("connectTimeoutMillis", connectTimeout);
 
         // start the connection attempt.
         LOGGER.debug("Connecting to Varnish management port at " + host + ":" + Integer.toString(port));
@@ -244,4 +257,13 @@ public class VarnishModule extends SimpleChannelHandler {
             latch.countDown();
         }
     }
+
+    public void setConnectTimeout(final int connectTimeout) {
+        this.connectTimeout = connectTimeout;
+    }
+
+    public int getConnectTimeout() {
+        return connectTimeout;
+    }
+
 }
