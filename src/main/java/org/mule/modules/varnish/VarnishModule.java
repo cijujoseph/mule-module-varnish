@@ -67,12 +67,12 @@ public class VarnishModule extends SimpleChannelHandler {
 
 
     /**
-     * Connection timeout in milliseconds. By default the connection timeout is set to 1000 milliseconds.
+     * Connection and await response timeout in milliseconds. By default the timeout is set to 10000 milliseconds (10 seconds)
      */
     @Configurable
     @Optional
-    @Default("1000")
-    private int connectTimeout;
+    @Default("10000")
+    private int timeout;
 
     /**
      * Connect to Varnish management port
@@ -92,7 +92,7 @@ public class VarnishModule extends SimpleChannelHandler {
         bootstrap.setPipelineFactory(new VarnishPipelineFactory(simpleChannelHandler));
         bootstrap.setOption("tcpNoDelay", true);
         bootstrap.setOption("keepAlive", true);
-        bootstrap.setOption("connectTimeoutMillis", connectTimeout);
+        bootstrap.setOption("connectTimeoutMillis", timeout);
 
         // start the connection attempt.
         LOGGER.debug("Connecting to Varnish management port at " + host + ":" + Integer.toString(port));
@@ -115,7 +115,7 @@ public class VarnishModule extends SimpleChannelHandler {
 
         VarnishResponse response = null;
         try {
-            response = callback.get(60, TimeUnit.SECONDS);
+            response = callback.get(timeout, TimeUnit.MILLISECONDS);
         } catch (TimeoutException e) {
             throw new ConnectionException(ConnectionExceptionCode.UNKNOWN, "", "Timeout await connect ACK");
         }
@@ -151,7 +151,7 @@ public class VarnishModule extends SimpleChannelHandler {
                 callbacks.add(callback);
                 // wait until the connection attempt succeeds or fails.
                 ChannelFuture future = channel.write("auth " + sha256 + "\n");
-                future.awaitUninterruptibly();
+                future.awaitUninterruptibly(timeout, TimeUnit.MILLISECONDS);
                 if (!future.isSuccess()) {
                     throw new ConnectionException(ConnectionExceptionCode.UNKNOWN, "", "Unable to send auth command", future.getCause());
                 }
@@ -161,7 +161,7 @@ public class VarnishModule extends SimpleChannelHandler {
 
             VarnishResponse response = null;
             try {
-                response = callback.get(60, TimeUnit.SECONDS);
+                response = callback.get(timeout, TimeUnit.MILLISECONDS);
             } catch (TimeoutException e) {
                 throw new ConnectionException(ConnectionExceptionCode.UNKNOWN, "", "Timeout while waiting for auth response");
             }
@@ -204,12 +204,12 @@ public class VarnishModule extends SimpleChannelHandler {
      *
      * @param url URL to ban, it can be a regular expression
      * @throws VarnishChannelException if unable to send message
-     * @throws VarnishException        if the response from server was not OK
-     * @throws TimeoutException        if operation took longer than expected
+     * @throws VarnishException        if the response from server was not OK, if unable to send message or if operation
+     *                                  took longer than expected
      */
     @Processor
-    @InvalidateConnectionOn(exception = TimeoutException.class)
-    public void banUrl(String url) throws VarnishChannelException, VarnishException, TimeoutException {
+    @InvalidateConnectionOn(exception = VarnishException.class)
+    public void banUrl(String url) throws VarnishChannelException, VarnishException {
         LOGGER.info("Banning URL " + url + " from Varnish cache located at " + channel.getRemoteAddress().toString());
 
         Callback callback = new Callback();
@@ -217,15 +217,20 @@ public class VarnishModule extends SimpleChannelHandler {
         try {
             callbacks.add(callback);
             ChannelFuture future = channel.write("ban.url " + url + "\n");
-            future.awaitUninterruptibly();
+            future.awaitUninterruptibly(timeout, TimeUnit.MILLISECONDS);
             if (!future.isSuccess()) {
-                throw new VarnishChannelException("Unable to ban url", future.getCause());
+                throw new VarnishException("Unable to ban url", future.getCause());
             }
         } finally {
             lock.unlock();
         }
 
-        VarnishResponse response = callback.get(60, TimeUnit.SECONDS);
+        VarnishResponse response;
+        try {
+            response = callback.get(timeout, TimeUnit.MILLISECONDS);
+        } catch (TimeoutException e) {
+            throw new VarnishException("Timeout while trying to ban url " + url);
+        }
 
         if (response.getStatusCode() != VarnishStatusCode.OK) {
             throw new VarnishException("An error occurred: " + response.getStatusCode().name() + " " + response.getMessage());
@@ -258,12 +263,12 @@ public class VarnishModule extends SimpleChannelHandler {
         }
     }
 
-    public void setConnectTimeout(final int connectTimeout) {
-        this.connectTimeout = connectTimeout;
+    public void setTimeout(final int timeout) {
+        this.timeout = timeout;
     }
 
-    public int getConnectTimeout() {
-        return connectTimeout;
+    public int getTimeout() {
+        return timeout;
     }
 
 }
