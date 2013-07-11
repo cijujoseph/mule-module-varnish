@@ -204,12 +204,12 @@ public class VarnishModule extends SimpleChannelHandler {
      *
      * @param url URL to ban, it can be a regular expression
      * @throws VarnishChannelException if unable to send message
-     * @throws VarnishException        if the response from server was not OK, if unable to send message or if operation
+     * @throws VarnishException        if the response from server was not OK or if operation
      *                                  took longer than expected
      */
     @Processor
     @InvalidateConnectionOn(exception = VarnishException.class)
-    public void banUrl(String url) throws VarnishChannelException, VarnishException {
+    public void banUrl(String url) throws VarnishException {
         LOGGER.info("Banning URL " + url + " from Varnish cache located at " + channel.getRemoteAddress().toString());
 
         Callback callback = new Callback();
@@ -219,7 +219,7 @@ public class VarnishModule extends SimpleChannelHandler {
             ChannelFuture future = channel.write("ban.url " + url + "\n");
             future.awaitUninterruptibly(timeout, TimeUnit.MILLISECONDS);
             if (!future.isSuccess()) {
-                throw new VarnishException("Unable to ban url", future.getCause());
+                throw new VarnishChannelException("Unable to ban url", future.getCause());
             }
         } finally {
             lock.unlock();

@@ -11,7 +11,7 @@
 
 package org.mule.modules.varnish;
 
-public class VarnishChannelException extends Exception {
+public class VarnishChannelException extends VarnishException {
     public VarnishChannelException() {
         super();
     }
