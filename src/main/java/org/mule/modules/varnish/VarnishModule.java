@@ -57,7 +57,7 @@ import java.util.concurrent.locks.ReentrantLock;
  *
  * @author MuleSoft, Inc.
  */
-@Connector(name = "varnish")
+@Connector(name = "varnish", minMuleVersion = "3.2")
 public class VarnishModule extends SimpleChannelHandler {
     private static final Logger LOGGER = Logger.getLogger(VarnishModule.class);
 
@@ -103,12 +103,13 @@ public class VarnishModule extends SimpleChannelHandler {
         try {
             callbacks.add(callback);
             // wait until the connection attempt succeeds or fails.
-            channel = future.awaitUninterruptibly().getChannel();
+            future.awaitUninterruptibly(timeout, TimeUnit.MILLISECONDS);
             if (!future.isSuccess()) {
                 LOGGER.error("Connection failure to Varnish management port at " + host + ":" + Integer.toString(port) + ". Cause: " + future.getCause().getMessage());
                 channel = null;
                 throw new ConnectionException(ConnectionExceptionCode.UNKNOWN, "", future.getCause().getMessage());
             }
+            channel = future.getChannel();
         } finally {
             lock.unlock();
         }
